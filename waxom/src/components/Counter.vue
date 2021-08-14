@@ -1,111 +1,91 @@
 <template>
-<div class="full">
+<div class="full-counter">
+
     <div class="counters">
-    
-        <div class="small-boxes">
-            <img src="./icons_etc/clients.png">
-            <ICountUp
-            :delay="delay"
-            :endVal="endVal[0]"
-            :options="options"
-            @ready="onReady"
-            />
+        <span id="waypoint"></span>
+        <div class="counter-boxes">
+            <img id="counter-logos" src="./icons_etc/clients.png">
+            <div class="counter">7518</div>
             <span id="comment">SATISFIED clients</span>
             <span id="bottom"></span>
         </div>
     
-        <div class="small-boxes">
-            <img src="./icons_etc/coffe.png">
-            <ICountUp
-            :delay="delay"
-            :endVal="endVal[1]"
-            :options="options"
-            @ready="onReady"
-            />
+        <div class="counter-boxes">
+            <img id="counter-logos" src="./icons_etc/coffe.png">
+            <div class="counter">7518</div>
             <span id="comment">cups of coffe</span>
             <span id="bottom"></span>
         </div>
    
-        <div class="small-boxes">
-            <img src="./icons_etc/blogs.png">
-            <ICountUp
-            :delay="delay"
-            :endVal="endVal[2]"
-            :options="options"
-            @ready="onReady"
-            />
+        <div class="counter-boxes">
+            <img id="counter-logos" src="./icons_etc/blogs.png">
+            <div class="counter">7518</div>
             <span id="comment">blog posts</span>
             <span id="bottom"></span>
         </div>
     
-        <div class="small-boxes">
-            <img src="./icons_etc/heart.png">
-            <ICountUp
-            :delay="delay"
-            :endVal="endVal[3]"
-            :options="options"
-            @ready="onReady"
-            />
+        <div class="counter-boxes">
+            <img id="counter-logos" src="./icons_etc/heart.png">
+            <div class="counter">7518</div>
                 <span id="comment">likes</span>
             <span id="bottom"></span>
         </div>
    
-        <div class="small-boxes">
-            <img src="./icons_etc/food.png">
-            <ICountUp
-            :delay="delay"
-            :endVal="endVal[4]"
-            :options="options"
-            @ready="onReady"
-            />
+        <div class="counter-boxes">
+            <img id="counter-logos" src="./icons_etc/food.png">
+            <div class="counter">7518</div>
             <span id="comment">we launched</span>
             <span id="bottom"></span>
         </div>
 
     </div>
+
 </div>    
 </template>
 
-<script type="text/babel">
-import ICountUp from 'vue-countup-v2';
+<script>
+/* eslint-disable */
+
 export default {
     components:{
-        ICountUp
     },
     name:'Counter',
     data(){
         return{
-            scrollPosition: 0,
-            delay: 5000,
-            endVal: [3587, 207, 2500, 873, 900],
-            options: {
-                useEasing: true,
-                useGrouping: true,
-                separator: ',',
-                decimal: '.',
-                prefix: '',
-                suffix: ''
+            // scrollPosition: 0,
         }
-    }
     },
-    methods:{
+
+    // methods:{
         
-    },
-    updateScroll(){
-        this.scrollPosition = window.scrollY
+    // },
+    // updateScroll(){
+    //     this.scrollPosition = window.scrollY
 
-    },
-
-    mounted(){
-        window.addEventListener('scroll', this.updateScroll);
-    },
+    // },
+    // mounted:{
+    // }
+    // mounted(){
+    //     window.addEventListener('scroll', this.updateScroll);
+    //     let scroller = document.createElement('script');
+    //     scroller.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js');
+    //     document.head.appendChild(scroller);
+    //     let waypoint = document.createElement('script');
+    //     waypoint.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js');
+    //     document.head.appendChild(waypoint)
+    //     ('.counter').counterUp({
+    //         delay:0,
+    //         time:1000
+    //     });
+    // },
 }
-    
+ /* eslint-enable */
+   
 
     </script>
 
 <style scoped>
-img{
+#counter-logos{
     color:#C7B299;
 }
 .full{
@@ -113,12 +93,6 @@ img{
     background: linear-gradient(90deg, rgba(45,24,27,1) 13%, rgba(65,38,37,1) 55%, rgba(65,38,37,1) 97%, rgba(82,41,39,1) 100%);
     width:100%;
     padding:150px 150px;
-}
-span{
-    color:white;
-    font-family: Raleway;
-    display:block;
-    font-size: 24px;
 }
 .counters{
     display:flex;
@@ -129,6 +103,7 @@ span{
     flex:15%;
 }
 #comment{
+    display:block;
     font-family: Raleway;
     font-weight: light;
     text-transform: uppercase;
@@ -141,7 +116,7 @@ span{
     display: inline-block;
 }
 @media only screen and (max-width: 650px) {
-    img{
+    #counter-logos{
         width:57px;
     }
     .full{

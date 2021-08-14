@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div v-once class="footer">
         <div class="sponsors">
             <img src="./Partners@1X.png" alt="">
         </div>

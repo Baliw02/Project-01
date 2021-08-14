@@ -10,8 +10,8 @@
             </ul>
         </div>
             <!--v-if="item.category == cate"-->
-            <div  v-for="(item ) in boxes" :key="item" :class="{project_boxes: true, activatedclass: item.category == cate}">
-                <div v-show="item.category == cate && item.index < limit" :class="{showbox: true, activatedlimiter: item.index < limit}">
+            <div  v-for="(item ) in boxes" :key="item" :class="{project_boxes: true, activatedclass: item.category === cate}">
+                <div v-if="item.category === cate && item.index < limit" :class="{showbox: true, activatedlimiter: item.index < limit}">
                     <img :src="item.image">
                     <h2>{{item.title}}</h2>
                     <p id="img-text">{{item.Content}}</p>
@@ -231,6 +231,6 @@ export default {
         console.log(response.data)
         this.boxes = response.data
         })
-    }
+    },
 }
 </script>

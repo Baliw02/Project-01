@@ -1,74 +1,93 @@
 <template>
   <div id="app">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <sidebar v-if="windowWidth <= 1040"></sidebar>
-    <stickyheader v-if="windowWidth > 1040"></stickyheader>  
-    <first></first>
-    <boxes></boxes>
-    <galleries></galleries>
-    <purchase></purchase>
-    <projectshow></projectshow>
-    <video-c></video-c>
-    <mobile></mobile>
-    <counter></counter>
-    <posts></posts>
-    <partners></partners>
-    <foo-ter></foo-ter>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <Navbar v-if="1040 < width"></Navbar>  
+    <Sidebar v-if="1040 >= width"></Sidebar>
+    <FirstBack></FirstBack>
+    <Boxes></Boxes>
+    <ThreeGallery></ThreeGallery>
+    <Purchase></Purchase>
+    <Projects></Projects>
+    <VideoSec></VideoSec>
+    <Mobile></Mobile>
+    <Counter></Counter>
+    <Posts></Posts>
+    <Partner></Partner>
+    <News></News>
 <!--    <feedback></feedback> -->
   </div>
 </template>
 
 <script>
 import Sidebar from './components/Sidebar'
-import Header from './components/Header'
+import Navbar from './components/Navbar'
 import FirstBack from './components/FirstBack'
 import Boxes from './components/BoxesFromapi'
 import ThreeGallery from './components/ThreeGallerySection'
 import Purchase from './components/Purchase'
-import ProjectShow from './components/Projects'
-import Video from './components/Video'
+import Projects from './components/Projects_fixed'
+//import ProjectShow from './components/Projects'
+import VideoSec from './components/VideoSec'
 import Mobile from './components/Mobile'
 import Counter from './components/Counter'
 import Posts from './components/Posts'
 import Partner from './components/Partners'
-import Footer from './components/Footer'
+import News from './components/News'
 // import Form from './components/Form'
 
 export default {
   name: 'App',
   components: {
-    'stickyheader': Header,
-    'first': FirstBack,
-    'boxes': Boxes,
-    'galleries': ThreeGallery,
-    'purchase': Purchase,
-    'projectshow': ProjectShow,
-    'video-c': Video,
-    'mobile': Mobile,
-    'counter': Counter,
-    'posts': Posts,
-    'partners': Partner,
-    'foo-ter': Footer,
-    'sidebar': Sidebar,
+    Navbar,
+    FirstBack,
+    Boxes,
+    ThreeGallery,
+    Purchase,
+    Projects,
+    //'projectshow': ProjectShow,
+    VideoSec,
+    Mobile,
+    Counter,
+    Posts,
+    Partner,
+    News,
+    Sidebar,
     // 'feedback': Form
 },
   data(){
     return{
-      windowWidth: 0
+        width: 0,
+        onloadWidth: 0
     }
   },
+  created() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+    window.onload = function(){
+      this.onloadWidth = window.innerWidth;
+    }
+    },
+  methods:{
+    handleResize(){
+      this.width = window.innerWidth
+    },
+  },
   mounted(){
-    window.addEventListener('resize', () => {
-      this.windowWidth = window.innerWidth;
-    })
+    window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import './components/design.scss';
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

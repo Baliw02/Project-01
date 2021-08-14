@@ -1,34 +1,37 @@
 <template>
     <div class="full-row">
-        <div class="text">
-            <h1>
+        <div class="text-post">
+            <h1 id="row-title">
                 Recent Posts.
             </h1>
-            <p>
+            <p id="row-p">
                 Investiationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutatuionem consuetiasd.
             </p>
         </div>
-        <div id="postbox" v-for="(item, i) in box_datas" :key="i" :class="{postboxes: true, active: i == activeId && windowWidth > 1000}">
-            <div v-if="i < 3">
-                <div  :class="{date: true, active: i == activeId}">
-                    <span id="day">{{item.day}}</span>
-                    <span id="month">{{item.month}}.</span>
+        <div id="postbox" v-for="(post_data, post_index) in box_datas" :key="post_data.day + post_data.month + post_data.image + post_data.content + post_data.title + post_index" :class="{postboxes: true, active: post_index == activeId && 1000 < windowWidth}">
+            <div v-if="post_index < 3">
+                <div  :class="{date: true, active: post_index == activeId}">
+                    <span id="day">{{post_data.day}}</span>
+                    <span id="month">{{post_data.month}}.</span>
                 </div>
-                <img :src="item.image">
-                <h2 :class="{active: i == activeId }">{{item.title}}</h2>
-                <p id="post-content">{{item.content}}</p>
-                <button>Read More <font-awesome-icon id="icon" icon="caret-right" /></button>
+                <img id="images-in-box" :src="post_data.image">
+                <div class="post-text-box">
+                    <h2 id="post-box-title" :class="{active: post_index == activeId }">{{post_data.title}}</h2>
+                    <p id="post-content">{{post_data.content}}</p>
+                    <button id="read-more"> Read More <font-awesome-icon id="rm-icon" icon="caret-right" /></button>
+                </div>
             </div>
         </div>
         <div class="sliders">
-            <button v-if=" windowWidth > 1000" v-on:click="activeId = activeId -1, checking()" id="slider-left"><font-awesome-icon id="icon" icon="angle-left" /></button>
-            <button v-if=" windowWidth > 1000" v-on:click="activeId = activeId +1, checking()" id="slider-right"><font-awesome-icon id="icon" icon="angle-right" /></button>
+            <button :class="{disabled: activeId === 0}" v-if=" 1000 < windowWidth" v-on:click="activeId = activeId -1, checking()" id="slider-left"><font-awesome-icon id="slider-icon" icon="angle-left" /></button>
+            <button  v-if=" 1000 < windowWidth" v-on:click="activeId = activeId +1, checking()" id="slider-right"><font-awesome-icon id="slider-icon" icon="angle-right" /></button>
         </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
+
 
 export default {
     name:'Posts',
@@ -43,10 +46,10 @@ export default {
     methods:{
         checking:function(){
             if(this.activeId == 3 ){
-                this.activeId = 0
+                this.activeId = 2
             }
             if(this.activeId == -1){
-                this.activeId = 2
+                this.activeId = 0
             }
         },
     },
@@ -64,161 +67,4 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.full-row{
-    text-align: center;
-    margin-top: 10%;
-    position: relative;
-}
-h1{
-    text-align: center;
-}
-p{
-    text-align: center;
-}
-.text{
-    margin-bottom: 5%;
-}
-.postboxes{
-    transition: all .2s linear;
-    height: auto;
-    position: relative;
-    text-align: left;
-    margin-left: -5%;
-    margin-right: -5%;
-    display:inline-block;
-    min-height: 396px;
-    margin-bottom:2%
-}
-img{
-    max-width: 397px;
-    max-height: 400px;
-}
-h2{
-    font-family: Raleway;
-    font-weight: 700;
-    max-width: 300px;
-    font-size: 20px;
-    padding:10px 10px;
-    margin:auto;
-    height: auto;
-}
-#post-content{
-    font-weight: 300;
-    text-align: left;
-    margin:auto;
-    min-height: 150px;
-    max-width: 300px;
-    font-size: 14px;
-    padding:10px 10px;
-    font-family: Raleway;
-}
-button{
-    padding: 10px 10px;
-    display: block;
-    width:auto;
-    margin: auto;
-    text-align: center;
-    align-items: center;
-    margin-top: 1%;
-    font-size: 14px;
-    border:none;
-    background-color: transparent;
-    color:#C7B299;
-}
-.date{
-    top:0;
-    text-align: center;
-    display:block;
-    position:absolute;
-    padding:10px 10px;
-}
-span{
-    padding: 5px 10px;
-    display:block;
-    font-family: Raleway;
-}
-#month{
-    font-size: 12px;
-    background-color: black;
-    color:white;
-    font-weight: 500;
-}
-#day{
-    font-weight: 500;
-    font-size: 24px;
-    background-color: grey;
-    color:white;
-    top:0;
-}
-.sliders{
-    display:block;
-    text-align: center;
-}
-#slider-left, #slider-right{
-    transition: all .2s linear;
-    margin-inline: 0.2%;
-    width:30px;
-    height:30px;
-    border:3px solid #C7B299;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 20px;
-    display:inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-#slider-left:hover, #slider-right:hover{
-    color:black;
-    border-color:black;
-}
-
-.postboxes.active {
-    background-color: #362F2D;
-    color:white;
-    z-index: 50;
-    transform:scale(1.2);
-}
-.date.active > #day{
-    background-color: #C7B299;
-}
-.date.active > #month{
-    background-color: #a1907a;
-}
-h2.active{
-    color:#C7B299;
-}
-@media only screen and (min-width: 1800px) {
-    .postboxes{
-        margin-inline: -1%;
-    }
-}
-@media only screen and (max-width: 1800px) {
-    button{
-        margin-top:2%;
-    }
-}
-@media only screen and (max-width: 1322px) {
-    #postbox{
-        width:30%;
-    }
-    button{
-        margin-top:3%;
-    }
-    img{
-        width:auto;
-        max-width: 100%;
-        max-height: 400px;
-    }
-}
-@media only screen and (max-width: 1000px) {
-    #postbox{
-        margin-top:2%;
-        display:block;
-        width:80%;
-        margin:auto;
-    }
-}
-</style>
 

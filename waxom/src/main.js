@@ -5,19 +5,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import {Server} from 'miragejs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import {CountUp} from 'countup.js'
-
-window.onload = function(){
-  var countUp = new CountUp('target', 2000);
-  countUp.start();
-}
 
 
 
 
-library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars )
+
+library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars, faGripLinesVertical )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -163,7 +158,8 @@ new Server({
           'index': 0,
           'category': 'all',
           'title': 'Lorem Ipsum all',
-          'Content': 'Lorem Lorem ipsum all'
+          'Content': 'Lorem Lorem ipsum all',
+          'activebool': 'true'
         },
         {
           'image': [require("./components/projectimages/photo@1X.png")],
@@ -205,7 +201,8 @@ new Server({
           'index': 0,
           'category': 'illustration',
           'title': 'Lorem Ipsum illustration',
-          'Content': 'Lorem Lorem ipsum illustration'
+          'Content': 'Lorem Lorem ipsum illustration',
+          'activebool': 'true'
         },
         {
           'image': [require("./components/projectimages/photo@1X.png")],
