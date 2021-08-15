@@ -5,35 +5,35 @@
         <span id="waypoint"></span>
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/clients.png">
-            <div class="counter">7518</div>
+            <div class="counter" ><p id="counter-p">7518</p></div>
             <span id="comment">SATISFIED clients</span>
             <span id="bottom"></span>
         </div>
     
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/coffe.png">
-            <div class="counter">7518</div>
+            <div class="counter" ><p id="counter-p">7518</p></div>
             <span id="comment">cups of coffe</span>
             <span id="bottom"></span>
         </div>
    
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/blogs.png">
-            <div class="counter">7518</div>
+            <div class="counter" ><p id="counter-p">7518</p></div>
             <span id="comment">blog posts</span>
             <span id="bottom"></span>
         </div>
     
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/heart.png">
-            <div class="counter">7518</div>
-                <span id="comment">likes</span>
+            <div class="counter" ><p id="counter-p">7518</p></div>
+            <span id="comment">likes</span>
             <span id="bottom"></span>
         </div>
    
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/food.png">
-            <div class="counter">7518</div>
+            <div class="counter" ><p id="counter-p">7518</p></div>
             <span id="comment">we launched</span>
             <span id="bottom"></span>
         </div>
@@ -55,6 +55,14 @@ export default {
             // scrollPosition: 0,
         }
     },
+    mounted:function(){
+        $(document).ready(function(){
+            $(".counter").counterUp({
+                delay:10,
+                time:1200
+            });
+        })
+    }
 
     // methods:{
         

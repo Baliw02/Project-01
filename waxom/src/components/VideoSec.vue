@@ -1,5 +1,5 @@
 <template>
-    <div v-once class="video">
+    <div class="video">
         <video id="video" src="./icons_etc/typing.mp4"></video>
         <button class="buttons" v-if="switcher == false" id="plbutton" v-on:click="playVid()"><font-awesome-icon id="play" icon="caret-right" /></button>
         <button class="buttons" v-if="switcher" id="stopbutton" v-on:click="stopVid()"><font-awesome-icon id="stop" :icon="['fas', 'grip-lines-vertical']" /></button>

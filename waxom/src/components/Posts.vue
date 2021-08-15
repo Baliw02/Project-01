@@ -8,8 +8,8 @@
                 Investiationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutatuionem consuetiasd.
             </p>
         </div>
-        <div id="postbox" v-for="(post_data, post_index) in box_datas" :key="post_data.day + post_data.month + post_data.image + post_data.content + post_data.title + post_index" :class="{postboxes: true, active: post_index == activeId && 1000 < windowWidth}">
-            <div v-if="post_index < 3">
+        <div id="postbox" v-for="(post_data, post_index) in box_datas" :key="post_data.day + post_data.month + post_data.image + post_data.content + post_data.title + post_index" :class="{postboxes: true, active: post_index == activeId && 1000 < windowWidth, mobile: 1000 > windowWidth,'mobile-active': post_index == activeId, sidepost: 1000 >= windowWidth && post_index > 0 && post_index != activeId}">
+            <div v-if="post_index < limiter">
                 <div  :class="{date: true, active: post_index == activeId}">
                     <span id="day">{{post_data.day}}</span>
                     <span id="month">{{post_data.month}}.</span>
@@ -23,8 +23,8 @@
             </div>
         </div>
         <div class="sliders">
-            <button :class="{disabled: activeId === 0}" v-if=" 1000 < windowWidth" v-on:click="activeId = activeId -1, checking()" id="slider-left"><font-awesome-icon id="slider-icon" icon="angle-left" /></button>
-            <button  v-if=" 1000 < windowWidth" v-on:click="activeId = activeId +1, checking()" id="slider-right"><font-awesome-icon id="slider-icon" icon="angle-right" /></button>
+            <button v-on:click="activeId = activeId -1, checking()" id="slider-left" :class="{disabled: activeId === 0, 'mobile-slider-post': 1000 > windowWidth}"><font-awesome-icon id="slider-icon" icon="angle-left" /></button>
+            <button v-on:click="activeId = activeId +1, checking()" id="slider-right" :class="{'mobile-slider-post': 1000 > windowWidth}"><font-awesome-icon id="slider-icon" icon="angle-right" /></button>
         </div>
     </div>
 </template>
@@ -39,8 +39,9 @@ export default {
     data(){
         return{
             box_datas: [],
-            activeId: 1,
-            windowWidth: 0
+            activeId: 0,
+            windowWidth: 0,
+            limiter: 3
         }
     },
     methods:{
@@ -57,14 +58,15 @@ export default {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth;
     })
-},
+    },
     created(){
     axios.get('/api/posts')
     .then(response => {
         console.log(response.data)
         this.box_datas = response.data
     })
-    }
+    },
+    
 }
 </script>
 

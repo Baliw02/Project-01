@@ -8,8 +8,8 @@
     </p>
 <div class="full-gallery">
     <div class="galleries">
-        <div v-if="1200 < windowWidth" :class="{active: index == 0}" class="carousel">
-        <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="false" :paginationPadding="0" :paginationEnabled="false">
+        <div :class="{carousel:true, active: index == 0, mobile: 1200 >= windowWidth}" >
+        <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="false" paginationActiveColor="#C7B299" :paginationSize="15" :paginationPadding="1" :paginationEnabled="index == 0">
                 <slide>
                     <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
                 </slide>                
@@ -18,8 +18,8 @@
                 </slide>
             </carousel>
         </div>
-        <div class="carousel" :class="{active: index == 1}">
-            <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="false" :paginationPadding="1" :paginationSize="15" :paginationEnabled="false" paginationActiveColor="#C7B299">
+        <div :class="{carousel:true, active: index == 1, mobile: 1200 >= windowWidth}">
+            <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="false" :paginationPadding="1" :paginationSize="15"  :paginationEnabled="index == 1" paginationActiveColor="#C7B299">
                 <slide>
                     <img id="img-in-gallery" src="./gallery/rightgallery.png" alt="">
                 </slide>
@@ -28,8 +28,8 @@
                 </slide>
             </carousel>
         </div>
-        <div v-if="1200 < windowWidth" class="carousel" :class="{active: index == 2}">
-            <carousel :per-page="1" paginationPosition="bottom" :adjustableHeight="false" :mouse-drag="false" :paginationPadding="0" :paginationEnabled="false">
+        <div :class="{carousel:true, active: index == 2, mobile: 1200 >= windowWidth}">
+            <carousel :per-page="1" paginationPosition="bottom" :adjustableHeight="false" :mouse-drag="false" :paginationSize="15" :paginationPadding="1" paginationActiveColor="#C7B299" :paginationEnabled="index == 2">
                 <slide>
                     <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
                 </slide>
@@ -38,10 +38,12 @@
                 </slide>
             </carousel>
         </div>
+        <button v-show="1200 > windowWidth" class="sliders-btn" :class="{mobileleft: true, disabled: index === 0}" v-on:click="index--, checker()"><font-awesome-icon :icon="['fas', 'angle-left']" /></button>
+        <button v-show="1200 > windowWidth" class="sliders-btn" :class="{mobileright:true , disabled: index === 2}" v-on:click="index++, checker()"><font-awesome-icon :icon="['fas', 'angle-right']" /></button>
     </div>    
 </div>
-        <button class="sliders-btn" :class="{disabled: index === 0}" v-on:click="index--, checker()"><font-awesome-icon :icon="['fas', 'angle-left']" /></button>
-        <button class="sliders-btn" :class="{disabled: index === 2}" v-on:click="index++, checker()"><font-awesome-icon :icon="['fas', 'angle-right']" /></button>
+        <button v-show="1200 < windowWidth" class="sliders-btn" :class="{disabled: index === 0}" v-on:click="index--, checker()"><font-awesome-icon :icon="['fas', 'angle-left']" /></button>
+        <button v-show="1200 < windowWidth" class="sliders-btn" :class="{disabled: index === 2}" v-on:click="index++, checker()"><font-awesome-icon :icon="['fas', 'angle-right']" /></button>
 </div>
 </template>
 
@@ -58,7 +60,7 @@ export default {
     data(){
         return{
             windowWidth: 0,
-            index: 1
+            index: 1,
         }
     },
     methods:{
@@ -78,9 +80,9 @@ export default {
     created() {
         window.addEventListener('resize', this.handleResize);
         this.handleResize();
-        },
-        
-  }
+    },
+
+    }
   
 </script>
 

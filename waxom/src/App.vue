@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <Navbar v-if="1040 < width"></Navbar>  
     <Sidebar v-if="1040 >= width"></Sidebar>
     <FirstBack></FirstBack>
