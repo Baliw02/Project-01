@@ -12,8 +12,9 @@
     <Counter></Counter>
     <Posts></Posts>
     <Partner></Partner>
+    <Form></Form>
     <News></News>
-<!--    <feedback></feedback> -->
+    <Footer></Footer>
   </div>
 </template>
 
@@ -32,7 +33,8 @@ import Counter from './components/Counter'
 import Posts from './components/Posts'
 import Partner from './components/Partners'
 import News from './components/News'
-// import Form from './components/Form'
+import Footer from './components/Footer'
+import Form from './components/Form'
 
 export default {
   name: 'App',
@@ -51,7 +53,8 @@ export default {
     Partner,
     News,
     Sidebar,
-    // 'feedback': Form
+    Footer,
+    Form
 },
   data(){
     return{

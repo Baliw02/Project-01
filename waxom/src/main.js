@@ -3,20 +3,23 @@ import App from './App.vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import {Server} from 'miragejs'
+import {Server, Model} from 'miragejs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical, faInbox } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
 
 
 
-library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars, faGripLinesVertical )
+library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars, faGripLinesVertical, faInbox )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Server({
+  models:{
+    emails: Model
+  },
   routes(){
     this.get('/api/boxes', () => {
       return[
@@ -335,18 +338,15 @@ new Server({
         },
       ]
     },    
-    this.get('api/emails', () => {
-      return[
-        
-      ]
+    this.get('/api/emails', (schema) => {
+      return schema.emails.all()
     },
     ),
     this.post('/api/emails', (schema, request) => {
-      console.log(request)
-      return[
-
-      ]
-    }),
+        let attrs = JSON.parse(request.requestBody)
+        return schema.emails.create(attrs)    
+    }
+    ),
     this.get('api/twitter', () =>{
       return[
         {

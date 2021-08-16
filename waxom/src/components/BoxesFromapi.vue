@@ -1,6 +1,6 @@
 <template>
     <div v-once class="full-section-api">
-        <div class="small-boxes" v-for="box in boxes" :key="box" >
+        <div class="small-api-boxes" v-for="box in boxes" :key="box + box.image + box.title + box.content" >
             <img id="box-logo" :src="box.image">       
             <h1 id="box-title">{{box.title}}</h1>
             <p id="content">{{box.content}}</p>

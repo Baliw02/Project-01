@@ -9,7 +9,7 @@
 <div class="full-gallery">
     <div class="galleries">
         <div :class="{carousel:true, active: index == 0, mobile: 1200 >= windowWidth}" >
-        <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="false" paginationActiveColor="#C7B299" :paginationSize="15" :paginationPadding="1" :paginationEnabled="index == 0">
+        <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="true" paginationActiveColor="#C7B299" :paginationSize="15" :paginationPadding="1" :paginationEnabled="index == 0">
                 <slide>
                     <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
                 </slide>                
@@ -19,7 +19,7 @@
             </carousel>
         </div>
         <div :class="{carousel:true, active: index == 1, mobile: 1200 >= windowWidth}">
-            <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="false" :paginationPadding="1" :paginationSize="15"  :paginationEnabled="index == 1" paginationActiveColor="#C7B299">
+            <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="true" :paginationPadding="1" :paginationSize="15"  :paginationEnabled="index == 1" paginationActiveColor="#C7B299">
                 <slide>
                     <img id="img-in-gallery" src="./gallery/rightgallery.png" alt="">
                 </slide>
@@ -29,7 +29,7 @@
             </carousel>
         </div>
         <div :class="{carousel:true, active: index == 2, mobile: 1200 >= windowWidth}">
-            <carousel :per-page="1" paginationPosition="bottom" :adjustableHeight="false" :mouse-drag="false" :paginationSize="15" :paginationPadding="1" paginationActiveColor="#C7B299" :paginationEnabled="index == 2">
+            <carousel :per-page="1" paginationPosition="bottom" :adjustableHeight="false" :mouse-drag="true" :paginationSize="15" :paginationPadding="1" paginationActiveColor="#C7B299" :paginationEnabled="index == 2">
                 <slide>
                     <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
                 </slide>
@@ -61,6 +61,7 @@ export default {
         return{
             windowWidth: 0,
             index: 1,
+            lwidth: 0
         }
     },
     methods:{
