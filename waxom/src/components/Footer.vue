@@ -8,7 +8,7 @@
                 <li>|</li>
                 <li id="faq">FAQ</li>
                 <li>|</li>
-                <li>Support</li>
+                <li id="support">Support</li>
             </ul>
         </div>
         <div class="right-footer">

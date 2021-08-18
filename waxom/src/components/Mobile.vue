@@ -1,5 +1,5 @@
 <template>
-    <div class="section">
+    <div class="mobile-section">
         <div class="left-flex">
             <img id="phone" src="./icons_etc/phone.png">
         </div>
@@ -9,14 +9,12 @@
                 <p>Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
                 <div class="list">
                     <ul id="drp-menu">
-                        <li id="drp-item"> <button id="drp-btn" class="btns" v-on:click="selected = 0, dblclick()" :class="{active: counter == 1 && selected == 0}"  ><font-awesome-icon id="icon" icon="angle-right" /></button> Nam liber temporr cum soluta nobis eleifend optionNam liber temporr cum soluta </li>
-                        <div class="box" v-if="selected == 0 && counter == 1"><p> Nam liber temporr cum soluta nobis eleifend option Nam liber temporr cum soluta nobis eleifend option</p></div>
-                        <li id="drp-item"> <button id="drp-btn" class="btns" v-on:click=" selected = 1, dblclick()"  :class="{active: counter == 1 && selected == 1}"  ><font-awesome-icon id="icon" icon="angle-right" /></button> Nam liber temporr cum soluta nobis eleifend optionNam liber temporr cum soluta</li>
-                        <div class="box" v-if="selected == 1 && counter == 1"><p> Nam liber temporr cum soluta nobis eleifend option Nam liber temporr cum soluta nobis eleifend option</p></div>
-                        <li id="drp-item"> <button id="drp-btn" class="btns" v-on:click=" selected = 2, dblclick()" :class="{active: counter == 1 && selected == 2}"  ><font-awesome-icon id="icon" icon="angle-right" /></button> Nam liber temporr cum soluta nobis eleifend optionNam liber temporr cum soluta </li>
-                        <div class="box" v-if="selected == 2 && counter == 1"><p> Nam liber temporr cum soluta nobis eleifend option Nam liber temporr cum soluta nobis eleifend option</p></div>
-                        <li id="drp-item"> <button id="drp-btn" class="btns"  v-on:click=" selected = 3, dblclick()" :class="{active: counter == 1 && selected == 3}"  ><font-awesome-icon id="icon" icon="angle-right" /></button> Nam liber temporr cum soluta nobis eleifend optionNam liber temporr cum soluta </li>
-                        <div class="box" v-if="selected == 3 && counter == 1"><p> Nam liber temporr cum soluta nobis eleifend option Nam liber temporr cum soluta nobis eleifend option</p></div>
+                        <li v-for="(list, list_index) in datas" :key="list + list_index + list.title +list.content ">
+                            <p> <button @click="setActive(list_index)" :class="{active: list_index === active && counter === 1}"><font-awesome-icon :icon="['fas', 'angle-right']" id="icon" /></button>{{list.title}}</p>
+                            <div v-if="active === list_index && counter == 1" class="drp-content">
+                                {{list.content}}
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -32,37 +30,30 @@ export default {
     name: 'Mobile',
     data(){
         return{
+        active: 0,
         datas: [],
         isActive: false,
         selected: undefined,
         clicked: false,
         counter: 0,
-        btns: []
+        btns: [
+            {index: 0},
+            {index: 1},
+            {index: 2},
+            {index: 3,}
+        ]
         }
     },
     methods:{
-        dblclick:function(){
-            this.counter += 1
-            if(this.counter == 2){
+        setActive:function(i){
+            this.active = i
+            this.counter+=1
+            if(this.counter >= 2){
                 this.counter = 0
             }
         }
         
-//        handleClick:function(){
-//        var btns = document.getElementsByClassName("btns");
-//        if(!this.clicked){
-//            for(var i = -1; i < btns.length; i++){
-//                if(btns[i].className == "btns active"){
-//                btns[i].classList.remove("active")
-//                }
-//           }for(i = 0; i <= this.selected; i++){
-//                   btns[i] = this.isActive = true
-//               }
-//            
-//            }
-//        },
-        
-    },
+    },  
     created(){
     axios.get('/api/dropdown')
     .then(response => {
@@ -73,6 +64,110 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import './design.scss';
 
+.mobile-section{
+    font-family: $primary_font;
+    margin-top:2%;
+    $transition_time: 0.1s;
+    display:flex;
+    .text-box{
+        h1{
+            color:#555555;
+            font-size: $larger_font_size + 6;
+            text-align: left;
+        }
+        p{
+            text-align: left;
+            font-size: $medium_font_size;
+        }
+    }
+    .left-flex{
+        flex:40%;
+        text-align: right;
+        justify-content: flex-end;
+    }
+    .right-flex{
+        color: #8C8C8C;
+        padding:100px 100px;
+        padding-right: 100px;
+        flex:60%;
+        justify-content: flex-start;
+    }
+    #drp-menu{
+        button{
+            margin-right: 3%;
+            width: 22px;
+            height: 22px;
+            text-align: center;
+            border:none;
+            border-radius: 50%;
+            background-color: $cream_font-color;
+            transition: $transition_full;
+        }
+        button.active{
+            transform:rotate(90deg);
+        }
+        #icon{
+            margin:auto;
+            display:block;
+            text-align: center;
+            font-size: $medium_font_size;
+            color: white;
+        }
+        list-style-type: none;
+        .drp-content{
+            padding:5px 5px;
+        }
+        p{
+            text-align: left;
+            font-size: $medium_font_size;
+            margin-bottom: 0;
+            padding:10px 10px;
+        }
+        .drp-content{
+            padding: 5px 20px;
+            text-align: left;
+            transition: $transition_full
+        }
+    }
+    @media only screen and (max-width:1440px){
+        #drp-menu{
+            p{
+                padding:2px 2px;
+            }
+        }
+    }
+    @media only screen and (max-width: 1100px){
+        flex-wrap: wrap-reverse;
+        .left-flex{
+            text-align: center;
+            flex:100%;
+        }
+        .right-flex{
+            justify-content:center;
+            flex:100%;
+        }
+    }
+    @media only screen and (max-width: 690px){
+        .right-flex{
+            justify-content: center;
+            text-align: left;
+            padding:5px 5px;
+            h1{
+                padding:10px 10px;
+            }
+            p{
+                padding:10px 10px;
+            }
+        }
+        #drp-menu{
+            p{
+                text-align: left;
+                padding: 1px 1px;
+            }
+        }
+    }
+}
 </style>

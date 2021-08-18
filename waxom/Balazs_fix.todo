@@ -1,0 +1,74 @@
+globális:
+    ☐ ellenőrizd mindenhol a projektben:
+        ☐ betűméreteket, font weight-et, betűszíneket
+        ☐ Gombokat - Igyekezz minél pontosabban reprodukálni a PSD-ből a gombot.
+        ☐ háttérszineket
+        ☐ minden hoverre, ami gomb, link vagy kep, eleg 0.2 vagy 0.3 másodperces transitiont rakni
+        ☐ Error-okat consoleból javítsd
+        ☐ címekben nem jók a távolságok a cím és az alatta lévő leírás között
+
+Nav:
+    ✔ desktop nézetben sticky állapotban túl nagy a header, vedd kisebbre @done(21-08-18 12:45)
+    ☐ az Logót javítsd, szedd ki a szöveggel együtt az ikont és úgy használd
+    ☐ a header legyen fixed alapvetően, mert így ugrik egyet amikor görgetni kezdesz
+    ☐ mobil navigációban annyit tanácsolnék hogy amikor megnyitod a menüt, cserélődjön le a hamburger ikon X-re, s ha bezárod legyen újra hamburger ikon
+    ☐ mobil: a menüpontok jobban néznének ki ha balra lennének igazítva. Amikor barna a háttere egy menüpontnak, úgy néz ki mintha nem lenne vertikálisan középre igazítva
+    ☐ mobil: a logó vagy középen legyen, vagy pedig olyan távolságra legyen a jobb oldaltól mint a hamburger ikon a bal oldaltól
+
+Hero:
+    ☐ a blokk magasságán csiszolnék. próbáld meg dinamikussá tenni, hogy mondjuk max 90%-át foglalja csak el a képernyőnek.
+
+featured-services:
+    ✔ javítsd hogy látható legyen @done(21-08-18 13:59)
+
+realization:
+    ✔ itt szerintem nem kell külön galériákat betenni, elég ha csak simán a képeket lapozhatod. Tehát a felépítés marad, csak simán 1-1 képpel @done(21-08-18 13:34)
+    ☐ lehessen swipe-olni és nyílra kattintva is lapozni közöttük. A nyilakat kicsit közelebb tenném a képekhez desktop nézetben
+
+purchase:
+    ☐ javítsd ezt a blokkot, színek nem passzolnak és a blokk szét van csúszva. úgy kell kinézzen mint a PSD-ben.
+
+Latest projects:
+    ☐ kicsi az eltartás a cím és az alatta levő szöveg között
+    ☐ a gombok nem úgy néznek ki min a PSD-ben
+    ☐ sokkal kisebb kell hogy legyen a táv két BOX között
+    ☐ hiányzik a kis háromszög a kép bal alsó sarkából
+    ☐ hiányoznak az ikonok a képről, az ikonoknak is van hover állapotuk arra majd figyelj
+    ☐ betűszínt változtatni kellene hoverre
+    ☐ a képek mérete mindig ugyanakkora kell legyen. igazítsd őket úgy hogy bármekkora kép is kerül a blockba, ne csússzon szét mint a Photography tabon
+    ☐ a box mérete nem kell hogy változzon hoverre
+
+Video:
+    ☐ a szöveg és az ikon nincsenek a megfelelő helyen
+    ☐ az ikon ne csak hoverre látszódjon, és jó lenne ha jobban illene a designban levőhöz
+    ☐ hiányzik az idő az alján
+
+Exccellent for:
+    ✔ a kép nem lóghat így a semmibe, a countup block tetejéhez kellene "tapadjon". ezen a block-on inkább paddingot használj, meg a következő margin-ját is szedd le @done(21-08-18 14:22)
+    ✔ a kis nyíl hoverre ne forduljon el, csak kattintásra @done(21-08-18 14:23)
+    ☐ tegyél egy kis animációt a blokk megjelenésre és eltűnésre
+
+Countup:
+    ☐ elég ha oldalbetöltés után első alkalommal felszámol a countup, mert így nem jó értékeket mutat mikor újra átgörgetünk felette
+
+Recent:
+    ✔ inkább maradjunk a PSD layoutnál, és lehessen több mint 3 elem a carousel-ben @done(21-08-18 13:52)
+    ✔ a next nyilnak nincs disabled állapota @done(21-08-18 13:52)
+    ✔ nem csak a read more hanem a cím és a kép is linkelnek. @done(21-08-18 13:56)
+
+Footer:
+    ✔ Logót javítsd ahogy a headerben is @done(21-08-18 13:39)
+    ✔ Logó alatt a Read more nem passzol, eltartást is javítsd @done(21-08-18 13:50)
+    ✔ Recent postsnál a középső a hover állapotot mutatja be @done(21-08-18 13:44)
+    ✔ out twitter - hiányoznak a linkek (kék és fehér szövegek azok) @done(21-08-18 13:50)
+    ✔ legalul a szövegek alig láthatók. pontosan azokat a szineket használd amik a PSD-ben vannak @done(21-08-18 13:44)
+    ✔ FAQ - ez is hover állapotot jelez, csak a privacy policy és a support amikre kell ez a hover @done(21-08-18 13:44)
+
+JS Funckionalítások:
+    ✔ All ne egy típus legyen, hanem arra az összes típus jelenjen meg a szűrésnél @done(21-08-18 10:26)
+    ☐ Load More tűnjön el, amennyiben már nincs több be nem töltött adat
+    ✔ Mobil szekciónál a lenyílló részek APIből jöjjenek @done(21-08-18 10:26)
+    ☐ Countupnál valami jquery nélküli plugin használata, illetve minden node_modules-ból jöjjön, ne külső scriptként
+    ☐ Formnál nem kell a GET, hanem a POST responseból kiírtatni az üzenetet. Itt csak akkor lehessen elküldeni a formot, ha egyik mező se üres, illetve ha az emailen stimmel a regex validáció(valós email cím check).
+    ☐ Minden API requestnél csinálni egy fajta error kezelést, arra az esetre, ha pl az endpoint nem található, vagy simán csak a responseba egy hiba jön vissza.
+        ☐ Ennek szerintem csak utána kell olvasni, de biztos hogy a mirage.js is tud error handling-et szimulálni

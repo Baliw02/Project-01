@@ -10,7 +10,7 @@
             </ul>
         </div>
         <div class="rows">
-        <div v-for="(project_box, j) in activeBoxes" :key="project_box.imgage + project_box.title + project_box.content + j" :class="{boxes, activatedc: j < limit, disabled: j >= limit}">
+        <div v-for="(project_box, j) in activeBoxes" :key="project_box.image + project_box.title + project_box.content + j" :class="{boxes, activatedc: j < limit, disabled: j >= limit}">
             <img id="projects-image" :src="project_box.image">
             <div class="content">
                 <h2 id="projects-box-title">{{project_box.title}}</h2>
@@ -19,7 +19,7 @@
             <div v-if="j == 3" class="break"></div>
         </div>
         </div>
-        <button id="load-more" v-on:click="limit += 6">Show more</button>    
+        <button v-if="show" id="load-more" v-on:click="limit += 6">Load more</button>
     </div>
 </template>
 <style scoped>
@@ -33,9 +33,12 @@ export default {
     name:'Projects',
     data(){
         return{
+            show: true,
             limit: 6,
             active:0,
+            len: 0,
             boxes: [],
+            collector: 0,
             switcher: [],
             buttons:[
                 {titles: 'All', cat: 'all'},
@@ -51,20 +54,28 @@ export default {
         .then(response => {
             console.log(response.data)
             this.boxes = response.data
+
         })
     },
     methods:{
         setActive: function(i){
             this.active = i;
             this.switcher = this.buttons[i]
-            }
+            },
     },
     computed:{
         activeBoxes: function(){
             return this.boxes.filter((boxes) => {
-
-                if(this.switcher == '') {this.switcher.cat = 'all'}
-                return boxes.category.match(this.switcher.cat) && this.limit
+                if(this.switcher.cat == '' || this.switcher.cat == 'all') {
+                    for(let i = 0; i < this.limiter; i++){
+                        this.switcher.cat = [ 'webdesign', 'mobile', 'illustration', 'photo']
+                        this.switcher.cat = this.switcher.cat[i]
+                    }
+                }
+                for(let j = 0; j < this.limit; j++){
+                    console.log(j)
+                    return boxes.category.match(this.switcher.cat)
+                }
             })
             }
     }

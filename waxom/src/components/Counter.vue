@@ -2,10 +2,10 @@
 <div class="full-counter">
 
     <div class="counters">
-        <span id="waypoint"></span>
+        <span id="waypoint" v-if="!countered"></span>
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/clients.png">
-            <div class="counter" ><p id="counter-p">7518</p></div>
+            <div class="counter" ><p id="counter-p">755</p></div>
             <span id="comment">SATISFIED clients</span>
             <span id="bottom"></span>
         </div>
@@ -16,24 +16,24 @@
             <span id="comment">cups of coffe</span>
             <span id="bottom"></span>
         </div>
-   
+
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/blogs.png">
-            <div class="counter" ><p id="counter-p">7518</p></div>
+            <div class="counter" ><p id="counter-p">518</p></div>
             <span id="comment">blog posts</span>
             <span id="bottom"></span>
         </div>
     
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/heart.png">
-            <div class="counter" ><p id="counter-p">7518</p></div>
+            <div class="counter" ><p id="counter-p">18</p></div>
             <span id="comment">likes</span>
             <span id="bottom"></span>
         </div>
    
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/food.png">
-            <div class="counter" ><p id="counter-p">7518</p></div>
+            <div class="counter" ><p id="counter-p">751</p></div>
             <span id="comment">we launched</span>
             <span id="bottom"></span>
         </div>
@@ -52,14 +52,15 @@ export default {
     name:'Counter',
     data(){
         return{
-            // scrollPosition: 0,
+            countered: false
         }
     },
     mounted:function(){
         $(document).ready(function(){
             $(".counter").counterUp({
                 delay:10,
-                time:1200
+                time:1200,
+                countered:true
             });
         })
     }

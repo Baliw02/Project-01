@@ -6,10 +6,10 @@
     <Boxes></Boxes>
     <ThreeGallery></ThreeGallery>
     <Purchase></Purchase>
-    <Projects></Projects>
-    <VideoSec></VideoSec>
+    <!-- <Projects></Projects> -->
+    <!-- <VideoSec></VideoSec> -->
     <Mobile></Mobile>
-    <Counter></Counter>
+    <!-- <Counter></Counter> -->
     <Posts></Posts>
     <Partner></Partner>
     <Form></Form>
@@ -23,18 +23,21 @@ import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import FirstBack from './components/FirstBack'
 import Boxes from './components/BoxesFromapi'
-import ThreeGallery from './components/ThreeGallerySection'
 import Purchase from './components/Purchase'
-import Projects from './components/Projects_fixed'
 //import ProjectShow from './components/Projects'
-import VideoSec from './components/VideoSec'
+// import VideoSec from './components/VideoSec'
 import Mobile from './components/Mobile'
-import Counter from './components/Counter'
-import Posts from './components/Posts'
 import Partner from './components/Partners'
 import News from './components/News'
 import Footer from './components/Footer'
-import Form from './components/Form'
+// import Projects from './components/projectfixed_v2'
+
+//Fixelni kell
+import ThreeGallery from './components/ThreeGallerySection'
+// import Projects from './components/Projects_fixed'
+//import Form from './components/Form'
+// import Counter from './components/Counter'
+import Posts from './components/Posts'
 
 export default {
   name: 'App',
@@ -44,17 +47,18 @@ export default {
     Boxes,
     ThreeGallery,
     Purchase,
-    Projects,
+  //  Projects,
     //'projectshow': ProjectShow,
-    VideoSec,
+    // VideoSec,
     Mobile,
-    Counter,
+  //  Counter,
     Posts,
     Partner,
     News,
     Sidebar,
     Footer,
-    Form
+    // Projects
+  //  Form
 },
   data(){
     return{

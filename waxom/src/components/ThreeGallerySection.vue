@@ -7,56 +7,31 @@
         Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
     </p>
 <div class="full-gallery">
+
     <div class="galleries">
         <div :class="{carousel:true, active: index == 0, mobile: 1200 >= windowWidth}" >
-        <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="true" paginationActiveColor="#C7B299" :paginationSize="15" :paginationPadding="1" :paginationEnabled="index == 0">
-                <slide>
-                    <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
-                </slide>                
-                <slide>
-                    <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
-                </slide>
-            </carousel>
+            <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
         </div>
         <div :class="{carousel:true, active: index == 1, mobile: 1200 >= windowWidth}">
-            <carousel :per-page="1" :adjustableHeight="false" :mouse-drag="true" :paginationPadding="1" :paginationSize="15"  :paginationEnabled="index == 1" paginationActiveColor="#C7B299">
-                <slide>
-                    <img id="img-in-gallery" src="./gallery/rightgallery.png" alt="">
-                </slide>
-                <slide>
-                    <img id="img-in-gallery" src="./gallery/rightgallery.png" alt="">
-                </slide>
-            </carousel>
+            <img id="img-in-gallery" src="./gallery/rightgallery.png" alt="">
         </div>
         <div :class="{carousel:true, active: index == 2, mobile: 1200 >= windowWidth}">
-            <carousel :per-page="1" paginationPosition="bottom" :adjustableHeight="false" :mouse-drag="true" :paginationSize="15" :paginationPadding="1" paginationActiveColor="#C7B299" :paginationEnabled="index == 2">
-                <slide>
-                    <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
-                </slide>
-                <slide>
-                    <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
-                </slide>
-            </carousel>
+            <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
         </div>
-        <button v-show="1200 > windowWidth" class="sliders-btn" :class="{mobileleft: true, disabled: index === 0}" v-on:click="index--, checker()"><font-awesome-icon :icon="['fas', 'angle-left']" /></button>
-        <button v-show="1200 > windowWidth" class="sliders-btn" :class="{mobileright:true , disabled: index === 2}" v-on:click="index++, checker()"><font-awesome-icon :icon="['fas', 'angle-right']" /></button>
-    </div>    
+        <button v-show="1200 > windowWidth" class="sliders-btn-mbl" :class="{mobileleft: true, disabled: index === 0}" v-on:click="index--, checker()"><font-awesome-icon :icon="['fas', 'angle-left']" /></button>
+        <button v-show="1200 > windowWidth" class="sliders-btn-mbl" :class="{mobileright:true , disabled: index === 2}" v-on:click="index++, checker()"><font-awesome-icon :icon="['fas', 'angle-right']" /></button>
+</div>    
+        <button v-show="1200 < windowWidth" id="left-g-slider" class="sliders-btn" :class="{disabled: index === 0}" v-on:click="index--, checker()"><font-awesome-icon :icon="['fas', 'angle-left']" /></button>
+        <button v-show="1200 < windowWidth" id="right-g-slider" class="sliders-btn" :class="{disabled: index === 2}" v-on:click="index++, checker()"><font-awesome-icon :icon="['fas', 'angle-right']" /></button>
 </div>
-        <button v-show="1200 < windowWidth" class="sliders-btn" :class="{disabled: index === 0}" v-on:click="index--, checker()"><font-awesome-icon :icon="['fas', 'angle-left']" /></button>
-        <button v-show="1200 < windowWidth" class="sliders-btn" :class="{disabled: index === 2}" v-on:click="index++, checker()"><font-awesome-icon :icon="['fas', 'angle-right']" /></button>
 </div>
 </template>
 
 <script>
-import {Carousel, Slide} from 'vue-carousel'
 
 export default {
 /* eslint-disable */
     name: 'ThreeGallery',
-    components:{ 
-        Carousel, 
-        Slide
-    },
     data(){
         return{
             windowWidth: 0,

@@ -73,6 +73,13 @@ export default {
             })
         }
     },
+    created(){
+        // axios.get('/api/errors').then(response => {
+        //     if(this.email == '' || this.text == ''){
+                
+        //     }
+        // })
+    }
 }
             
 
