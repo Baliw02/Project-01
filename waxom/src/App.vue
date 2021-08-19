@@ -6,10 +6,10 @@
     <Boxes></Boxes>
     <ThreeGallery></ThreeGallery>
     <Purchase></Purchase>
-    <!-- <Projects></Projects> -->
-    <!-- <VideoSec></VideoSec> -->
+    <Projects></Projects>
+    <VideoSec></VideoSec>
     <Mobile></Mobile>
-    <!-- <Counter></Counter> -->
+    <Counter></Counter>
     <Posts></Posts>
     <Partner></Partner>
     <Form></Form>
@@ -25,7 +25,7 @@ import FirstBack from './components/FirstBack'
 import Boxes from './components/BoxesFromapi'
 import Purchase from './components/Purchase'
 //import ProjectShow from './components/Projects'
-// import VideoSec from './components/VideoSec'
+import VideoSec from './components/VideoSec'
 import Mobile from './components/Mobile'
 import Partner from './components/Partners'
 import News from './components/News'
@@ -34,9 +34,9 @@ import Footer from './components/Footer'
 
 //Fixelni kell
 import ThreeGallery from './components/ThreeGallerySection'
-// import Projects from './components/Projects_fixed'
+import Projects from './components/Projects_fixed'
 //import Form from './components/Form'
-// import Counter from './components/Counter'
+import Counter from './components/Counter'
 import Posts from './components/Posts'
 
 export default {
@@ -49,15 +49,15 @@ export default {
     Purchase,
   //  Projects,
     //'projectshow': ProjectShow,
-    // VideoSec,
+    VideoSec,
     Mobile,
-  //  Counter,
+   Counter,
     Posts,
     Partner,
     News,
     Sidebar,
     Footer,
-    // Projects
+    Projects
   //  Form
 },
   data(){

@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import {Server, Model} from 'miragejs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical, faInbox } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
@@ -14,7 +14,7 @@ var VueGesture = require('vue2-gesture')
 Vue.use(VueGesture)
 
 
-library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars, faGripLinesVertical, faInbox )
+library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

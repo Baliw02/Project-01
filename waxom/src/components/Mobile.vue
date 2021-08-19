@@ -11,7 +11,7 @@
                     <ul id="drp-menu">
                         <li v-for="(list, list_index) in datas" :key="list + list_index + list.title +list.content ">
                             <p> <button @click="setActive(list_index)" :class="{active: list_index === active && counter === 1}"><font-awesome-icon :icon="['fas', 'angle-right']" id="icon" /></button>{{list.title}}</p>
-                            <div v-if="active === list_index && counter == 1" class="drp-content">
+                            <div v-if="active === list_index && counter == 1" class="drp-content" :class="{active: list_index === active && counter === 1}">
                                 {{list.content}}
                             </div>
                         </li>
@@ -51,7 +51,7 @@ export default {
             if(this.counter >= 2){
                 this.counter = 0
             }
-        }
+        },
         
     },  
     created(){
@@ -129,7 +129,7 @@ export default {
         .drp-content{
             padding: 5px 20px;
             text-align: left;
-            transition: $transition_full
+            transition: all .5s linear;
         }
     }
     @media only screen and (max-width:1440px){

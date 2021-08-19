@@ -1,5 +1,5 @@
 <template>
-<div class="full-counter">
+<div v-once class="full-counter">
 
     <div class="counters">
         <span id="waypoint" v-if="!countered"></span>
@@ -93,30 +93,44 @@ export default {
 
     </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import './design.scss';
+
 #counter-logos{
     color:#C7B299;
 }
-.full{
-    margin-top:10%;
-    background: linear-gradient(90deg, rgba(45,24,27,1) 13%, rgba(65,38,37,1) 55%, rgba(65,38,37,1) 97%, rgba(82,41,39,1) 100%);
+.full-counter{
+    margin-top:0%;
+    background: linear-gradient(90deg, rgba(32,4,4,1) 0%, rgba(88,49,2,1) 86%);
     width:100%;
-    padding:150px 150px;
+    padding:50px 50px;
 }
 .counters{
     display:flex;
+    flex-wrap: wrap;
 }
-.small-boxes{
+.counter{
+    color:white;
+    font-family: Roboto;
+    padding:5px 5px;
+    font-size: $larger_font_size * 2;
+    font-weight: 300;
+}
+.counter-boxes{
     justify-content: center;
     text-align: center;
     flex:15%;
+    @media only screen and(max-width: 744px){
+        flex:50%;
+    }
 }
+
 #comment{
     display:block;
-    font-family: Raleway;
+    font-family: $primary_font;
     font-weight: light;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: $smaller_font_size - 2;
     color:#C7B299;
 }
 #bottom{
@@ -124,23 +138,6 @@ export default {
     border-bottom: 2px solid white;
     display: inline-block;
 }
-@media only screen and (max-width: 650px) {
-    #counter-logos{
-        width:57px;
-    }
-    .full{
-        justify-content: center;
-        text-align: center;
-    }
-    .counters{
-        display:flex;
-        flex-wrap: wrap;
-        text-align: center;    
-        margin:0;
-    }
-    .small-boxes{
-        margin-bottom: 5%;
-        flex:100%;
-    }
-}
+
+
 </style>

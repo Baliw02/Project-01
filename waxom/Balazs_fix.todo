@@ -1,22 +1,22 @@
 globális:
     ☐ ellenőrizd mindenhol a projektben:
         ☐ betűméreteket, font weight-et, betűszíneket
-        ☐ Gombokat - Igyekezz minél pontosabban reprodukálni a PSD-ből a gombot.
-        ☐ háttérszineket
-        ☐ minden hoverre, ami gomb, link vagy kep, eleg 0.2 vagy 0.3 másodperces transitiont rakni
+        ✔ Gombokat - Igyekezz minél pontosabban reprodukálni a PSD-ből a gombot. @done(21-08-19 12:02)
+        ✔ háttérszineket @done(21-08-19 12:02)
+        ✔ minden hoverre, ami gomb, link vagy kep, eleg 0.2 vagy 0.3 másodperces transitiont rakni @done(21-08-19 12:02)
         ☐ Error-okat consoleból javítsd
         ☐ címekben nem jók a távolságok a cím és az alatta lévő leírás között
 
 Nav:
     ✔ desktop nézetben sticky állapotban túl nagy a header, vedd kisebbre @done(21-08-18 12:45)
-    ☐ az Logót javítsd, szedd ki a szöveggel együtt az ikont és úgy használd
-    ☐ a header legyen fixed alapvetően, mert így ugrik egyet amikor görgetni kezdesz
-    ☐ mobil navigációban annyit tanácsolnék hogy amikor megnyitod a menüt, cserélődjön le a hamburger ikon X-re, s ha bezárod legyen újra hamburger ikon
-    ☐ mobil: a menüpontok jobban néznének ki ha balra lennének igazítva. Amikor barna a háttere egy menüpontnak, úgy néz ki mintha nem lenne vertikálisan középre igazítva
-    ☐ mobil: a logó vagy középen legyen, vagy pedig olyan távolságra legyen a jobb oldaltól mint a hamburger ikon a bal oldaltól
+    ✔ az Logót javítsd, szedd ki a szöveggel együtt az ikont és úgy használd @done(21-08-19 08:21)
+    ✔ a header legyen fixed alapvetően, mert így ugrik egyet amikor görgetni kezdesz @done(21-08-19 08:21)
+    ✔ mobil navigációban annyit tanácsolnék hogy amikor megnyitod a menüt, cserélődjön le a hamburger ikon X-re, s ha bezárod legyen újra hamburger ikon @done(21-08-19 07:57)
+    ✔ mobil: a menüpontok jobban néznének ki ha balra lennének igazítva. Amikor barna a háttere egy menüpontnak, úgy néz ki mintha nem lenne vertikálisan középre igazítva @done(21-08-19 08:00)
+    ✔ mobil: a logó vagy középen legyen, vagy pedig olyan távolságra legyen a jobb oldaltól mint a hamburger ikon a bal oldaltól @done(21-08-19 08:21)
 
 Hero:
-    ☐ a blokk magasságán csiszolnék. próbáld meg dinamikussá tenni, hogy mondjuk max 90%-át foglalja csak el a képernyőnek.
+    ✔ a blokk magasságán csiszolnék. próbáld meg dinamikussá tenni, hogy mondjuk max 90%-át foglalja csak el a képernyőnek. @done(21-08-19 12:01)
 
 featured-services:
     ✔ javítsd hogy látható legyen @done(21-08-18 13:59)
@@ -26,21 +26,21 @@ realization:
     ☐ lehessen swipe-olni és nyílra kattintva is lapozni közöttük. A nyilakat kicsit közelebb tenném a képekhez desktop nézetben
 
 purchase:
-    ☐ javítsd ezt a blokkot, színek nem passzolnak és a blokk szét van csúszva. úgy kell kinézzen mint a PSD-ben.
+    ✔ javítsd ezt a blokkot, színek nem passzolnak és a blokk szét van csúszva. úgy kell kinézzen mint a PSD-ben. @done(21-08-19 08:29)
 
 Latest projects:
-    ☐ kicsi az eltartás a cím és az alatta levő szöveg között
-    ☐ a gombok nem úgy néznek ki min a PSD-ben
-    ☐ sokkal kisebb kell hogy legyen a táv két BOX között
+    ✔ kicsi az eltartás a cím és az alatta levő szöveg között @done(21-08-19 10:39)
+    ✔ a gombok nem úgy néznek ki min a PSD-ben @done(21-08-19 12:01)
+    ✔ sokkal kisebb kell hogy legyen a táv két BOX között @done(21-08-19 10:37)
     ☐ hiányzik a kis háromszög a kép bal alsó sarkából
-    ☐ hiányoznak az ikonok a képről, az ikonoknak is van hover állapotuk arra majd figyelj
-    ☐ betűszínt változtatni kellene hoverre
-    ☐ a képek mérete mindig ugyanakkora kell legyen. igazítsd őket úgy hogy bármekkora kép is kerül a blockba, ne csússzon szét mint a Photography tabon
-    ☐ a box mérete nem kell hogy változzon hoverre
+    ✔ hiányoznak az ikonok a képről, az ikonoknak is van hover állapotuk arra majd figyelj @done(21-08-19 12:01)
+    ✔ betűszínt változtatni kellene hoverre @done(21-08-19 10:37)
+    ✔ a képek mérete mindig ugyanakkora kell legyen. igazítsd őket úgy hogy bármekkora kép is kerül a blockba, ne csússzon szét mint a Photography tabon @done(21-08-19 10:37)
+    ✔ a box mérete nem kell hogy változzon hoverre @done(21-08-19 10:37)
 
 Video:
-    ☐ a szöveg és az ikon nincsenek a megfelelő helyen
-    ☐ az ikon ne csak hoverre látszódjon, és jó lenne ha jobban illene a designban levőhöz
+    ✔ a szöveg és az ikon nincsenek a megfelelő helyen @done(21-08-19 09:14)
+    ✔ az ikon ne csak hoverre látszódjon, és jó lenne ha jobban illene a designban levőhöz @done(21-08-19 09:09)
     ☐ hiányzik az idő az alján
 
 Exccellent for:
