@@ -31,7 +31,6 @@
 
 export default {
 /* eslint-disable */
-    name: 'ThreeGallery',
     data(){
         return{
             windowWidth: 0,
@@ -69,11 +68,26 @@ export default {
     max-width: 100%;
 }
 .full-section-gallery{
+    font-family: $primary_font;
     margin-top:0%;
     margin-bottom:0%;
     text-align: center;
     padding-top:1%;
     background-color: #FBFAF8;
+    #gallery-title{
+        font-family: Raleway !important;
+        font-size: $larger_font_size + 6;
+        padding-top:78px;
+        padding-bottom: 24px;
+        margin-bottom:0;
+    }
+    #gallery-p{
+        margin-bottom:0;
+        font-size: $smaller_font_size + 2;
+        font-family: $primary_font;
+        padding-bottom: 24px;
+    }
+
 }
 .full-gallery{
     margin-top: 5%;
@@ -100,7 +114,7 @@ $transition_time: 0.3;
 .sliders-btn{
     position:absolute;
     transition: $transition_full;
-    top:85%;
+    top:80%;
     left:0;
     right:0;
     margin:auto;
@@ -150,21 +164,13 @@ $transition_time: 1;
     display: block;
     position: absolute;
     z-index: 53;
-    top: 0%;
+    top: -10%;
     left: 0;
     right: 0;
     margin: $centered_margin;
 }
 .carousel.active #img-in-gallery{
     max-width: 100%;
-}
-#gallery-title{
-    font-family: $primary_font;
-    font-size: $larger_font_size + 6;
-}
-#gallery-p{
-    font-size: $smaller_font_size + 2;
-    font-family: $primary_font;
 }
 
 .carousel.mobile{
@@ -182,6 +188,7 @@ $transition_time: 1;
 .carousel.active.mobile{
     left:0;
     right:0;
+    top:0;
     margin:auto;
     display:inline-block;
     position:absolute;

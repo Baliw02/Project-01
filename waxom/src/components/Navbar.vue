@@ -19,7 +19,6 @@
 <script>
 
 export default {
-    name: 'Navbar',
     data(){
         return{
             scrollPosition: 0

@@ -13,8 +13,8 @@
         <div v-for="(project_box, j) in activeBoxes" :key="project_box.image + project_box.title + project_box.content + j" :class="{boxes, activatedc: j < limit, disabled: j >= limit}">
             <img id="projects-image" :src="project_box.image">
             <div class="project-icons-div">
-                <img id="project-icons" src="./icons_etc/image-link.svg" style="color:white;">
-                <img id="project-icons" src="./icons_etc/image-search.svg">
+                <font-awesome-icon  id='project-icons' :icon="['fas', 'link']" />
+                <font-awesome-icon  id='project-icons' :icon="['fas', 'search']" />
             </div>
             <div class="content">
                 <h2 id="projects-box-title">{{project_box.title}}</h2>
@@ -31,7 +31,6 @@
 import axios from 'axios'
 
 export default {
-    name:'Projects',
     data(){
         return{
             show: true,
@@ -95,27 +94,27 @@ export default {
     position:absolute;
 }
 #project-icons{
+    font-size: $larger_font_size + 3;
     visibility: hidden;
     margin-left:27px;
     margin-right: 27px;
-
 }
 .boxes:hover  #project-icons{
     color:white;
     visibility: visible;
-    filter: brightness(100);
 }
 #project-icons:hover{
-    color:$cream_font_color;
+    color:$cream-font-color;
 }
 #list:hover{
     color:white;
     background-color:#998675;
 }
 #list{
+    color:#8C8C8C;
     font-size: $smaller_font_size;
     font-family: Raleway;
-    font-weight: 500;
+    font-weight: light;
     border:none;
     padding: 0.5% 1%;
     background-color: transparent;
@@ -163,6 +162,21 @@ export default {
 .boxes:hover .content{
     background-color: #362F2D;
 }
+.content::after{
+    width:0;
+    height: 0;
+    position:absolute;
+    top:72%;
+    left:2%;
+    content:'';
+    border-left: 31px solid transparent;
+    border-right: 31px solid transparent;
+    border-bottom: 11px solid #FBFAF8;
+    margin:auto;
+}
+.boxes:hover .content::after{
+    border-bottom-color: #362F2D;
+}
 .boxes:hover #p-cont{
     color: $cream_font_color;
 }
@@ -179,11 +193,13 @@ export default {
 }
 #p-cont{
     color:#D1D1D1;
+    font-family: $primary_font;
+    font-size: $smaller_font_size;
 }
 .content{
     padding:20px 20px;
     text-align: left;
-    background-color: #f0eeea;
+    background-color: #FBFAF8;
 }
 
 .break{
@@ -191,9 +207,10 @@ export default {
     flex-basis: 100%;
 }
 .full-section-projects{
+    margin-top:81px;
     text-align: center;
-    padding:120px 120px;
-        @media only screen and (max-width: 1090px){
+    padding:0px 120px;
+        @media only screen and (max-width: 1154px){
         padding: 0 0;
     }
 
@@ -207,6 +224,7 @@ export default {
     width:fit-content;
     height: fit-content;
     margin:auto;
+    margin-bottom:61px;
     font-family: Raleway;
     font-weight: 500;
     text-transform: uppercase;
@@ -217,8 +235,8 @@ export default {
     cursor: pointer;
     border-radius: 5%;
     transition: all .2s linear;
-    margin-top:5%;
-    margin-bottom: 5%;
+    margin-top:39px;
+    box-shadow: 0px 6px 5px -3px #9E8E7C;
 }
 #load-more:hover{
     background-color:black;
@@ -232,7 +250,6 @@ export default {
     color:white;
     border:none;
     cursor: pointer;
-    border-radius: 5%;
     transition: all .1s linear;
 }
 #projects-buttons-menu{
@@ -248,10 +265,13 @@ export default {
     font-family: $primary_font;
     color:#362F2D;
     margin: auto;
+    font-size: $larger_font_size + 6;
+    padding: 24px 24px;
 }
 #comm{
     font-family: $primary_font;
     border:none;
+    padding: 24px 24px;
 }
 .triangle{
     width: 5px;

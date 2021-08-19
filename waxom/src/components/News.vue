@@ -49,7 +49,6 @@
 import axios from 'axios'
 
 export default {
-    name:"News",
     data(){
         return{
             datas: [],
@@ -80,3 +79,82 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+@import './design.scss';
+
+#images{
+    white-space: pre-wrap;
+    border:none;
+    text-align: center;
+    margin-bottom:-13%;
+    padding-bottom: 10%;
+}
+#footer-menu{
+    padding:50px 50px;
+    list-style-type: none;
+}
+#image-box{
+    padding:0;
+    text-align: center;
+    list-style: none;
+}
+.full-section{
+    font-family: $primary_font;
+    padding:50px 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    display:flex;
+    width:100%;
+    background-color: rgb(24, 23, 23);
+    margin:0;
+}
+.left-box{
+    justify-content: center;
+    text-align: center;
+    flex:25%;
+}
+.center-left-box{
+    flex:25%;
+}
+.center-right-box{
+    flex:25%;
+}
+.right-box{
+    flex:25%;
+    min-width:425px;
+    max-width: 25%;
+    padding:50px 50px;
+}
+#logo{
+    margin-bottom:5%;
+}
+#list-p{
+    text-align: justify;
+    color:#555555;
+    font-size: $smaller_font_size;
+}
+#footer-rm{
+    font-family: $primary_font;
+    margin-top:2%;
+    color:#D1D1D1;
+    background-color: transparent;
+    border:none;
+    font-size: $smaller_font_size;
+    padding-left: 0;
+}
+#footer-title{
+    color:white;
+}
+#footer-items{
+    color:#555555;
+    padding:5% 5%;
+    transition: $transition_full;
+}
+#footer-items:hover{
+    color: $cream_font_color;
+}
+.text{
+    border-bottom:1px solid #252525;
+}
+</style>

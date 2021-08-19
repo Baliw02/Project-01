@@ -11,16 +11,10 @@
 </style>
 
 <script>
-export default {
-    name:'Partner'   
-}
 </script>
 <style scoped>
 img{
     width:100%;   
     max-width:100%;   
-}
-.footer{
-    margin-top: 10%;
 }
 </style>

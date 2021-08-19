@@ -13,7 +13,6 @@
 import axios from 'axios'
 
 export default {
-    name:"Boxes",
     data(){
         return{
             boxes: [],
@@ -38,15 +37,16 @@ export default {
 }
 #box-title{
     text-align: center;
-    font-size: $larger_font_size + 6;
+    font-size: $larger_font_size - 2;
 }
 #content{
     font-size:$smaller_font_size ;
 }
 .full-section-api{
-    padding-left: 12%;
-    padding-right: 12%;
-    margin-top:0%;
+    padding-left: 13%;
+    padding-right: 13%;
+    margin-top:-81px;
+    margin-bottom:81px;
     display:flex;
     flex-wrap: wrap;
     align-items: stretch;
@@ -75,11 +75,11 @@ export default {
 }
 #bottom{
     margin:$centered_margin;
-    border-bottom:3px solid #F1EEE9;
+    border-bottom:1px solid #F1EEE9;
     width: 30%;
 }
 .small-api-boxes:hover #bottom{
-    border-bottom: 3px solid $cream_font_color;
+    border-bottom: 1px solid $cream_font_color;
 }
 .small-api-boxes:hover h1{
     color: $cream_font_color;

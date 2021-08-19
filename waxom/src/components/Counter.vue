@@ -2,7 +2,7 @@
 <div v-once class="full-counter">
 
     <div class="counters">
-        <span id="waypoint" v-if="!countered"></span>
+        <span id="waypoint"></span>
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/clients.png">
             <div class="counter" ><p id="counter-p">755</p></div>
@@ -47,12 +47,8 @@
 /* eslint-disable */
 
 export default {
-    components:{
-    },
-    name:'Counter',
     data(){
         return{
-            countered: false
         }
     },
     mounted:function(){
@@ -60,8 +56,8 @@ export default {
             $(".counter").counterUp({
                 delay:10,
                 time:1200,
-                countered:true
             });
+
         })
     }
 
@@ -103,11 +99,23 @@ export default {
     margin-top:0%;
     background: linear-gradient(90deg, rgba(32,4,4,1) 0%, rgba(88,49,2,1) 86%);
     width:100%;
-    padding:50px 50px;
 }
 .counters{
+    padding:69px 500px;
     display:flex;
-    flex-wrap: wrap;
+    @media only screen and(max-width: 1800px){
+        padding: 40px 350px;
+    }
+    @media only screen and(max-width: 1500px){
+        padding: 30px 250px;
+    }
+    @media only screen and(max-width: 1200px){
+        padding: 20px 150px;
+    }
+
+    @media only screen and(max-width: 1000px){
+        flex-wrap:wrap;
+    }
 }
 .counter{
     color:white;
@@ -120,7 +128,7 @@ export default {
     justify-content: center;
     text-align: center;
     flex:15%;
-    @media only screen and(max-width: 744px){
+    @media only screen and(max-width: 1000px){
         flex:50%;
     }
 }
@@ -130,7 +138,7 @@ export default {
     font-family: $primary_font;
     font-weight: light;
     text-transform: uppercase;
-    font-size: $smaller_font_size - 2;
+    font-size: $smaller_font_size;
     color:#C7B299;
 }
 #bottom{

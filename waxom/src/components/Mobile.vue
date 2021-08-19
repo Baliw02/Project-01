@@ -27,7 +27,6 @@
 import axios from 'axios'
 
 export default {
-    name: 'Mobile',
     data(){
         return{
         active: 0,
@@ -69,7 +68,7 @@ export default {
 
 .mobile-section{
     font-family: $primary_font;
-    margin-top:2%;
+    margin-top:80px;
     $transition_time: 0.1s;
     display:flex;
     .text-box{
@@ -77,10 +76,12 @@ export default {
             color:#555555;
             font-size: $larger_font_size + 6;
             text-align: left;
+            padding-bottom:40px;
         }
         p{
             text-align: left;
             font-size: $medium_font_size;
+            padding-bottom:39px;
         }
     }
     .left-flex{
@@ -124,7 +125,7 @@ export default {
             text-align: left;
             font-size: $medium_font_size;
             margin-bottom: 0;
-            padding:10px 10px;
+            padding:11px 11px;
         }
         .drp-content{
             padding: 5px 20px;

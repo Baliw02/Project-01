@@ -9,7 +9,7 @@
             </p>
         </div>
         <div class="post-row">
-        <div class="posts" v-for="post in activePosts" :key="post.text + post.item">
+        <div class="posts" v-for="post in activePosts" :key="post.day + post.link + post.day + post.month + post.content ">
             <div class="post-date">
                 <span id="post-day">{{post.day}}</span>
                 <span id="post-month">{{post.month}}</span>
@@ -32,7 +32,6 @@ import axios from 'axios'
 
 
 export default {
-    name:'Posts',
     components: axios,
     data(){
         return{
@@ -110,9 +109,13 @@ export default {
 <style lang="scss" scoped>
 @import './design.scss';
 .full-row{
+    margin-top:89px;
+    margin-bottom:60px;
     .row-title{
         font-size: $larger_font_size + 6;
         color:#555555;
+        padding-bottom: 30px;
+        margin-bottom:0;
     }
     .row-p{
         color:#8C8C8C;

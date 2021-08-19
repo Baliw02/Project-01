@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import {Server, Model} from 'miragejs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose, faPen, faLink, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
@@ -14,7 +14,7 @@ var VueGesture = require('vue2-gesture')
 Vue.use(VueGesture)
 
 
-library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose )
+library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose, faPen, faLink, faSearch)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -273,7 +273,7 @@ new Server({
         return[
         {
           'index': 1,
-          'month': 'jul',
+          'month': 'Jul',
           'day': 5, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 1',
@@ -282,7 +282,7 @@ new Server({
         },
         {
           'index': 2,
-          'month': 'jul',
+          'month': 'Jul',
           'day': 5, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 2',
@@ -291,7 +291,7 @@ new Server({
         },
         {
           'index': 3,
-          'month': 'jul',
+          'month': 'Jul',
           'day': 5, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 3',
@@ -300,7 +300,7 @@ new Server({
         },
         {
           'index': 4,
-          'month': 'aug',
+          'month': 'Aug',
           'day': 25, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 4',
@@ -309,7 +309,7 @@ new Server({
         },
         {
           'index': 5,
-          'month': 'sept',
+          'month': 'Sept',
           'day': 16, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 5',
@@ -318,7 +318,7 @@ new Server({
         },
         {
           'index': 6,
-          'month': 'sept',
+          'month': 'Sept',
           'day': 16, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 6',
@@ -327,7 +327,7 @@ new Server({
         },
         {
           'index': 7,
-          'month': 'sept',
+          'month': 'Sept',
           'day': 16, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 7',
@@ -336,7 +336,7 @@ new Server({
         },
         {
           'index': 8,
-          'month': 'sept',
+          'month': 'Sept',
           'day': 16, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 8',
@@ -345,7 +345,7 @@ new Server({
         },
         {
           'index': 9,
-          'month': 'sept',
+          'month': 'Sept',
           'day': 16, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 9',
@@ -354,7 +354,7 @@ new Server({
         },      
         {
           'index': 10,
-          'month': 'sept',
+          'month': 'Sept',
           'day': 16, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 10',
@@ -363,7 +363,7 @@ new Server({
         },
         {
           'index': 11,
-          'month': 'sept',
+          'month': 'Sept',
           'day': 16, 
           'title': 'Lorem Ipsum title',
           'content': 'Lorem Ipsum content 11',

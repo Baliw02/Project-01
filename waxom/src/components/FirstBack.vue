@@ -43,7 +43,6 @@ export default {
     Carousel,
     Slide
     },
-    name:'FirstBack'
 }
 </script>
 
@@ -77,6 +76,7 @@ position:relative;
 }
 #text-p-image{
     color:white;
+    font-family: Raleway;
     font-size: $larger_font_size + 12;
     @media only screen and(max-width: 1163px){
         font-size: $larger_font-size;

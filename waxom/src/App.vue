@@ -14,7 +14,7 @@
     <Partner></Partner>
     <Form></Form>
     <News></News>
-    <Footer></Footer>
+    <Fouter></Fouter>
   </div>
 </template>
 
@@ -24,15 +24,11 @@ import Navbar from './components/Navbar'
 import FirstBack from './components/FirstBack'
 import Boxes from './components/BoxesFromapi'
 import Purchase from './components/Purchase'
-//import ProjectShow from './components/Projects'
 import VideoSec from './components/VideoSec'
 import Mobile from './components/Mobile'
 import Partner from './components/Partners'
 import News from './components/News'
-import Footer from './components/Footer'
-// import Projects from './components/projectfixed_v2'
-
-//Fixelni kell
+import Fouter from './components/Footer'
 import ThreeGallery from './components/ThreeGallerySection'
 import Projects from './components/Projects_fixed'
 //import Form from './components/Form'
@@ -47,8 +43,6 @@ export default {
     Boxes,
     ThreeGallery,
     Purchase,
-  //  Projects,
-    //'projectshow': ProjectShow,
     VideoSec,
     Mobile,
    Counter,
@@ -56,7 +50,7 @@ export default {
     Partner,
     News,
     Sidebar,
-    Footer,
+    Fouter,
     Projects
   //  Form
 },
