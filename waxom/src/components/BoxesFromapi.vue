@@ -25,6 +25,7 @@ export default {
         console.log(response.data)
         this.boxes = response.data
     })
+    .catch((err) => console.log(err))
     }
 }
 </script>
@@ -51,48 +52,51 @@ export default {
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
-}
-.small-api-boxes{
-    padding: 30px 30px;
-    flex:10%;
-    width:10%;
-    text-align: center;        
-    min-height: auto;
-    @media only screen and(max-width: 1366px){
-        flex:50%;
-    }
-    @media only screen and(max-width: 800px){
-        flex:100%;
-    }
-}
-#box-img{
-    width:40px;
-    height: 40px;
-}
-#box-title, #bottom{
-    transition: all .2s linear;
-    font-weight: 600;
-}
-#bottom{
-    margin:$centered_margin;
-    border-bottom:1px solid #F1EEE9;
-    width: 30%;
-}
-.small-api-boxes:hover #bottom{
-    border-bottom: 1px solid $cream_font_color;
-}
-.small-api-boxes:hover h1{
-    color: $cream_font_color;
 
+    .small-api-boxes{
+        padding: 30px 30px;
+        flex:10%;
+        width:10%;
+        text-align: center;        
+        min-height: auto;
+        @media only screen and(max-width: 1366px){
+            flex:50%;
+        }
+        @media only screen and(max-width: 800px){
+            flex:100%;
+        }
+        &:hover #bottom{
+            border-bottom: 1px solid $cream_font_color;
+        }
+        &:hover h1{
+            color: $cream_font_color;
+        }
+        &:hover #box-logo{
+            color:$cream_font_color;
+        }
+        #box-img{
+        width:45px;
+        max-width:45px;
+        height: 41px;
+        max-height:41px;
+        }
+        #box-logo{
+        width:45px;
+        max-width:45px;
+        height: 41px;
+        max-height:41px;
+        }
+        #box-title, #bottom{
+        transition: all .2s linear;
+        font-weight: 600;
+        }
+        #bottom{
+        margin:$centered_margin;
+        border-bottom:1px solid #F1EEE9;
+        width: 30%;
+        }
+    }
 }
-.small-api-boxes:hover #box-logo{
-    color:$cream_font_color;
-}   
-    #box-logo{
-    width:45px;
-    max-width:45px;
-    height: 41px;
-    max-height:41px;
-}
+
 
 </style>

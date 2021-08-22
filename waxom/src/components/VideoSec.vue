@@ -6,7 +6,7 @@
         <div id="text-on-video" class="text-on-video">
             <h1 id="video-text-title">Waxom Video Presentation</h1>
             <p id="video-text-p">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem consuetudium.</p>    
-        </div>        
+        </div>
     </div>
 </template>
 
@@ -15,7 +15,6 @@ export default {
     data(){
         return{
             switcher: false,
-            duration: 0
        }   
     },
     methods:{
@@ -44,8 +43,6 @@ export default {
             }
         },
     },
-    computed:{
-    }
     
 }
 </script>

@@ -1,11 +1,10 @@
 <template>
-<div v-once class="full-counter">
+<div class="full-counter">
 
-    <div class="counters">
-        <span id="waypoint"></span>
+    <div class="counters" v-waypoint = "{active: true, callback: onWaypoint, options: intersectionOptions}" >
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/clients.png">
-            <div class="counter" ><p id="counter-p">755</p></div>
+            <div class="counter" ><p id="counter-p"><ICountUp :endVal = 666 /></p></div>
             <span id="comment">SATISFIED clients</span>
             <span id="bottom"></span>
         </div>
@@ -44,47 +43,43 @@
 </template>
 
 <script>
-/* eslint-disable */
+
+// eslint-disable-next-line no-unused-vars
+import ICountUp from 'vue-countup-v2';
+// eslint-disable-next-line no-unused-vars
+import {defineComponent} from 'vue'
+// eslint-disable-next-line no-unused-vars
+import{VueWaypoint} from 'vue-waypoint'
 
 export default {
+    components:{
+        ICountUp
+    },
     data(){
         return{
+            intersectionOptions:{
+                root: document,
+                rootMargin: '0px 0px 0px 0px',
+                threshold: [0.25, 0.75]
+            },
+            counter:false        
         }
     },
-    mounted:function(){
-        $(document).ready(function(){
-            $(".counter").counterUp({
-                delay:10,
-                time:1200,
-            });
-
-        })
+    setup(){
+    
+    },
+    methods:{
+            // eslint-disable-next-line no-unused-vars
+            onwWaypoint({going, direction}){
+            if(direction === this.$waypointMap.DIRECTION_TOP){
+                this.counter = true
+            }
+            else if(direction === this.$waypointMap.DIRECTION_BOTTOM){
+                this.counter = false
+            }
+        }
     }
-
-    // methods:{
-        
-    // },
-    // updateScroll(){
-    //     this.scrollPosition = window.scrollY
-
-    // },
-    // mounted:{
-    // }
-    // mounted(){
-    //     window.addEventListener('scroll', this.updateScroll);
-    //     let scroller = document.createElement('script');
-    //     scroller.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js');
-    //     document.head.appendChild(scroller);
-    //     let waypoint = document.createElement('script');
-    //     waypoint.setAttribute('src', 'https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js');
-    //     document.head.appendChild(waypoint)
-    //     ('.counter').counterUp({
-    //         delay:0,
-    //         time:1000
-    //     });
-    // },
 }
- /* eslint-enable */
    
 
     </script>

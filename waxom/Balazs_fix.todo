@@ -23,7 +23,7 @@ featured-services:
 
 realization:
     ✔ itt szerintem nem kell külön galériákat betenni, elég ha csak simán a képeket lapozhatod. Tehát a felépítés marad, csak simán 1-1 képpel @done(21-08-18 13:34)
-    ☐ lehessen swipe-olni és nyílra kattintva is lapozni közöttük. A nyilakat kicsit közelebb tenném a képekhez desktop nézetben
+    // lehessen swipe-olni és nyílra kattintva is lapozni közöttük. A nyilakat kicsit közelebb tenném a képekhez desktop nézetben
 
 purchase:
     ✔ javítsd ezt a blokkot, színek nem passzolnak és a blokk szét van csúszva. úgy kell kinézzen mint a PSD-ben. @done(21-08-19 08:29)
@@ -70,5 +70,5 @@ JS Funckionalítások:
     ✔ Mobil szekciónál a lenyílló részek APIből jöjjenek @done(21-08-18 10:26)
     ☐ Countupnál valami jquery nélküli plugin használata, illetve minden node_modules-ból jöjjön, ne külső scriptként
     ☐ Formnál nem kell a GET, hanem a POST responseból kiírtatni az üzenetet. Itt csak akkor lehessen elküldeni a formot, ha egyik mező se üres, illetve ha az emailen stimmel a regex validáció(valós email cím check).
-    ☐ Minden API requestnél csinálni egy fajta error kezelést, arra az esetre, ha pl az endpoint nem található, vagy simán csak a responseba egy hiba jön vissza.
-        ☐ Ennek szerintem csak utána kell olvasni, de biztos hogy a mirage.js is tud error handling-et szimulálni
+    ✔ Minden API requestnél csinálni egy fajta error kezelést, arra az esetre, ha pl az endpoint nem található, vagy simán csak a responseba egy hiba jön vissza. @done(21-08-20 14:39)
+    ✔ Ennek szerintem csak utána kell olvasni, de biztos hogy a mirage.js is tud error handling-et szimulálni @done(21-08-20 14:55)

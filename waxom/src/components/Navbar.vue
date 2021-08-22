@@ -1,7 +1,7 @@
 <template>
 <div class="header" :class="{changed : scrollPosition >= 80}">
         <ul id="menu-ul">
-            <li id="menu-items"><img id="menu-logo" src="./icons_etc/logo.png" alt=""></li>
+            <li id="menu-items"><img id="menu-logo" src="./icons_etc/logo.png" alt="" style="width: 162px; height: 50px;"></li>
             <li id="menu-items">Home</li>
             <li id="menu-items">About Me</li>
             <li id="menu-items">Portfolio</li>
@@ -65,6 +65,7 @@ export default {
 }
 #menu-ul{
     padding:20px 20px;
+    padding-bottom:0;
     text-align: center;
     width: 100%;
 }

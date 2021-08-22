@@ -10,7 +10,7 @@
 
     <div class="galleries">
         <div :class="{carousel:true, active: index == 0, mobile: 1200 >= windowWidth}" >
-            <img id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
+            <img   id="img-in-gallery" src="./gallery/leftgallery.png" alt="">
         </div>
         <div :class="{carousel:true, active: index == 1, mobile: 1200 >= windowWidth}">
             <img id="img-in-gallery" src="./gallery/rightgallery.png" alt="">
@@ -20,17 +20,20 @@
         </div>
         <button v-show="1200 > windowWidth" class="sliders-btn-mbl" :class="{mobileleft: true, disabled: index === 0}" v-on:click="index--, checker()"><font-awesome-icon :icon="['fas', 'angle-left']" /></button>
         <button v-show="1200 > windowWidth" class="sliders-btn-mbl" :class="{mobileright:true , disabled: index === 2}" v-on:click="index++, checker()"><font-awesome-icon :icon="['fas', 'angle-right']" /></button>
-</div>    
+        </div>    
         <button v-show="1200 < windowWidth" id="left-g-slider" class="sliders-btn" :class="{disabled: index === 0}" v-on:click="index--, checker()"><font-awesome-icon :icon="['fas', 'angle-left']" /></button>
         <button v-show="1200 < windowWidth" id="right-g-slider" class="sliders-btn" :class="{disabled: index === 2}" v-on:click="index++, checker()"><font-awesome-icon :icon="['fas', 'angle-right']" /></button>
-</div>
+    </div>
+
 </div>
 </template>
 
 <script>
+/* eslint-disable */
+
+
 
 export default {
-/* eslint-disable */
     data(){
         return{
             windowWidth: 0,
@@ -50,20 +53,19 @@ export default {
     handleResize(){
       this.windowWidth = window.innerWidth
     },
-
+    
     },
     created() {
         window.addEventListener('resize', this.handleResize);
         this.handleResize();
     },
 
-    }
+}  
   
 </script>
 
 <style lang="scss" scoped>
 @import './design.scss';
-
 #img-in-gallery{
     max-width: 100%;
 }

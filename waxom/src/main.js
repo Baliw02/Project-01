@@ -3,10 +3,17 @@ import App from './App.vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import VueWaypoint from 'vue-waypoint'
 import {Server, Model} from 'miragejs'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose, faPen, faLink, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+
+import VueSplide from '@splidejs/vue-splide';
+
+Vue.use( VueSplide );
+Vue.use( VueWaypoint );
 
 
 window.Vue = Vue;
@@ -386,14 +393,6 @@ new Server({
       return schema.emails.create(attrs)    
     }
     ),
-    this.get('api/error', () => {
-      return[
-        {
-          'status': 450,
-          'text': 'Ki kell töltened minden mezőt!'      
-        }
-      ]
-    }),
     this.get('api/twitter', () =>{
       return[
         {
