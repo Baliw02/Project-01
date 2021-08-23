@@ -103,10 +103,14 @@ export default {
     }
 .galleries{
     height: 300px;
+    @media only screen and(max-width: 1630px){
+        height:fit-content;
+    }
+
 }
 $transition_time: 1;
 .carousel{
-    margin-inline: -5%;
+    margin-inline: 50px;
     display:inline-block;
     width: 30%;
     z-index: 30;
@@ -129,6 +133,9 @@ $transition_time: 0.3;
     font-size:15px;
     color:white;
     z-index: 51;
+    @media only screen and(max-width: 1630px){
+        top:70%;
+    }
 }
 .sliders-btn-mbl{
     position:absolute;
@@ -170,6 +177,9 @@ $transition_time: 1;
     left: 0;
     right: 0;
     margin: $centered_margin;
+    @media only screen and(max-width: 1630px){
+        top:0;
+    }
 }
 .carousel.active #img-in-gallery{
     max-width: 100%;

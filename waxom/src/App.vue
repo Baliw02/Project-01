@@ -9,7 +9,7 @@
     <Projects></Projects>
     <VideoSec></VideoSec>
     <Mobile></Mobile>
-    <!-- <Counter></Counter> -->
+    <Counter></Counter>
     <Posts></Posts>
     <Partner></Partner>
     <Form></Form>
@@ -32,7 +32,7 @@ import Fouter from './components/Footer'
 import ThreeGallery from './components/ThreeGallerySection'
 import Projects from './components/Projects_fixed'
 import Form from './components/Form'
-// import Counter from './components/Counter'
+import Counter from './components/Counter'
 import Posts from './components/Posts'
 
 export default {
@@ -45,7 +45,7 @@ export default {
     Purchase,
     VideoSec,
     Mobile,
-    // Counter,
+    Counter,
     Posts,
     Partner,
     News,
@@ -57,7 +57,7 @@ export default {
   data(){
     return{
         width: 0,
-        onloadWidth: 0
+        onloadWidth: 0,
     }
   },
   created() {

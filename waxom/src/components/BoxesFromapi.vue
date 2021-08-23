@@ -42,6 +42,7 @@ export default {
 }
 #content{
     font-size:$smaller_font_size ;
+    padding:10px 10px;
 }
 .full-section-api{
     padding-left: 13%;
@@ -54,7 +55,7 @@ export default {
     justify-content: center;
 
     .small-api-boxes{
-        padding: 30px 30px;
+        padding: 17px 17px;
         flex:10%;
         width:10%;
         text-align: center;        
@@ -62,11 +63,12 @@ export default {
         @media only screen and(max-width: 1366px){
             flex:50%;
         }
-        @media only screen and(max-width: 800px){
+        @media only screen and(max-width: 720px){
             flex:100%;
+            width:50%;
         }
         &:hover #bottom{
-            border-bottom: 1px solid $cream_font_color;
+            border-bottom: 3px solid $cream_font_color;
         }
         &:hover h1{
             color: $cream_font_color;
@@ -92,7 +94,7 @@ export default {
         }
         #bottom{
         margin:$centered_margin;
-        border-bottom:1px solid #F1EEE9;
+        border-bottom:3px solid #F1EEE9;
         width: 30%;
         }
     }

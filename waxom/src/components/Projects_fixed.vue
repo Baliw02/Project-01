@@ -10,7 +10,7 @@
             </ul>
         </div>
         <div class="rows">
-        <div v-for="(project_box, j) in activeBoxes" :key="project_box.image + project_box.title + project_box.content + j" :class="{boxes, activatedc: j < limit, disabled: j >= limit}">
+        <div v-for="(project_box, j) in activeBoxes" :key="project_box.image + project_box.title + project_box.content + j" :class="{boxes, activatedc: j < limit, disabled: j >= limit}"> <!-- limit > j -->
             <img id="projects-image" :src="project_box.image">
             <div class="project-icons-div">
                 <font-awesome-icon  id='project-icons' :icon="['fas', 'link']" />
@@ -23,7 +23,7 @@
             <div v-if="j == 3" class="break"></div>
         </div>
         </div>
-        <button v-if="show" id="load-more" v-on:click="limit += 6">Load more</button>
+            <button v-if="show" id="load-more" v-on:click="limit += 6">Load more</button>
     </div>
 </template>
 
@@ -33,13 +33,12 @@ import axios from 'axios'
 export default {
     data(){
         return{
+            a: 0,
+            j: 0,
             show: true,
             limit: 6,
             active:0,
-            len: 0,
             boxes: [],
-            finished: [],
-            collector: [],
             switcher: [],
             buttons:[
                 {titles: 'All', cat: ''},
@@ -54,7 +53,7 @@ export default {
         axios.get('/api/projects')
         .then(response => {
             this.boxes = response.data
-
+//limit > legnagyobb index
         })
     },
     methods:{
@@ -66,14 +65,22 @@ export default {
     computed:{
         activeBoxes: function(){
             return this.boxes.filter((boxes) => {
-                if(this.switcher.cat == '' || this.switcher.cat == 'all') {
-                    for(let i = 0; i < this.limiter; i++){
-                        this.switcher.cat = [ 'webdesign', 'mobile', 'illustration', 'photo']
-                        this.switcher.cat = this.switcher.cat[i]
+                if(this.switcher.cat == '' || this.switcher.cat == undefined){
+                    if(this.boxes.length < this.limit){
+                        this.show = false
+                    }
+                    else if(this.boxes.length > this.limit){
+                        this.show = true
                     }
                 }
-                
-                 
+                if(this.switcher.cat == boxes.category.match(this.switcher.cat)){
+                    if(boxes.index < this.limit && this.switcher.cat != ''){
+                        this.show = false
+                    }
+                    else if(boxes.index > this.limit && this.switcher.cat != ''){
+                        this.show = true
+                    }
+                }                 
                 return boxes.category.match(this.switcher.cat)
             })
             }
@@ -103,8 +110,9 @@ export default {
     color:white;
     visibility: visible;
 }
-#project-icons:hover{
+.boxes #project-icons:hover{
     color:$cream-font-color;
+    cursor: pointer;
 }
 #list:hover{
     color:white;
@@ -121,6 +129,14 @@ export default {
     transition: all .2s linear;
     border: 1px solid #cfcccc;    
 }
+#list.active{
+    padding: 0.5% 1%;
+    background-color: #998675;
+    color:white;
+    border:1px solid transparent;
+    cursor: pointer;
+    transition: all .1s linear;
+}
 #projects-image{
     min-height: 295px;
     max-height: 295px;
@@ -128,6 +144,9 @@ export default {
     height: 100%;
     max-width: 100%;
     position:relative;
+    @media only screen and (max-width: 450px){
+        min-height:auto;
+    }
 }
 
 .rows{
@@ -137,18 +156,21 @@ export default {
     @media only screen and (max-width: 1090px){
         padding: 0 0;
     }
+    @media only screen and(min-width: 1925px){
+        padding: 0 160px; 
+    }
     @media only screen and (min-width: 2000px){
-        padding: 0 250px;
+        padding: 0 340px;
     }
     @media only screen and (min-width: 2600px){
-        padding: 0 400px;
+        padding: 0 460px;
     }
     @media only screen and (min-width: 2800px){
-        padding: 0 500px;
+        padding: 0 00px;
     }
 }
 .boxes{
-    margin:29px;
+    margin:13px;
     flex:0 0 33.3333%;
     transition:all .1s linear;
 }
@@ -158,15 +180,20 @@ export default {
     max-height: 397px;
     min-width: 396px;
     min-height: 397px;
+    @media only screen and (max-width: 450px){
+        margin-bottom: 50px;
+        width:100%;
+    }
 }
 .boxes:hover .content{
     background-color: #362F2D;
 }
 .content::after{
+    z-index: 98;
     width:0;
     height: 0;
     position:absolute;
-    top:72%;
+    top:71.8%;
     left:2%;
     content:'';
     border-left: 31px solid transparent;
@@ -210,7 +237,10 @@ export default {
     margin-top:81px;
     text-align: center;
     padding:0px 120px;
-        @media only screen and (max-width: 1154px){
+    @media only screen and (max-width: 1570px){
+        padding: 0 90px;
+    }
+    @media only screen and (max-width: 1154px){
         padding: 0 0;
     }
 
@@ -242,16 +272,7 @@ export default {
     background-color:black;
     color:#998675
 }
-#list.active{
-    font-family: Raleway;
-    font-weight: 500;
-    padding: 0.5% 1%;
-    background-color: #998675;
-    color:white;
-    border:none;
-    cursor: pointer;
-    transition: all .1s linear;
-}
+
 #projects-buttons-menu{
     text-align: center;
     margin:auto;

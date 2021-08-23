@@ -15,6 +15,7 @@ export default {
     data(){
         return{
             switcher: false,
+            min: 0
        }   
     },
     methods:{

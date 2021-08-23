@@ -17,20 +17,21 @@
             <ul id="footer-menu">
                 <li id="footer-items"><h1 id="footer-title">Recent posts</h1></li>
                 <li id="footer-items" class="text">
-                    September 08, 2015<br>
+                    <span id="new-date">September 08, 2015</span><br>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit</li>
-                <li id="footer-items" class="text"><span id="center-post">September 08, 2015</span><br>
+                <li id="footer-items" class="text"><span id="new-date">September 08, 2015</span><br>
                     <span id="center-post">Diam nonummy nibh euismod tincidunt ut laoreet dolore magna</span>
                 </li>
-                <li id="footer-items" class="text">September 08, 2015<br>
+                <li id="footer-items" class="text">
+                    <span id="new-date">September 08, 2015</span><br>
                     Claritas est etiam processus dynamicus, qui sequitur mutationem per seacula quarta decima
                 </li>
             </ul>
         </div>
         <div class="center-right-box">
             <ul id="footer-menu">
-                <li id="footer-items"><h1 id="footer-title">Our Twitter</h1></li>
-                <li id="footer-items" class="text" v-for="footer_item in datas" :key="footer_item.conent">{{footer_item.content}} 
+                <li id="footer-items-twitter"><h1 id="footer-title">Our Twitter</h1></li>
+                <li id="footer-items-twitter" class="text" v-for="footer_item in datas" :key="footer_item.conent"><span id="uploader">{{footer_item.uploader}}</span> {{footer_item.content}} 
                     <br > {{footer_item.time}} ago</li> 
             </ul>
         </div>
@@ -64,19 +65,6 @@ export default {
         this.datas = response.data
     })
     },
-    computed:{
-        // checkingTime:function(){
-        // if(this.datas.time >= 60 && this.datas.time > 0){
-        //     this.hours = true
-        //     return  this.time / 60
-        // }
-        // if(this.datas.day > 0){
-        //     this.day = true
-        //     this.hour = false
-        //     return this.time = this.datas.day
-        // }
-        // }
-    }
 }
 </script>
 
@@ -91,8 +79,14 @@ export default {
     padding-bottom: 10%;
 }
 #footer-menu{
-    padding:50px 50px;
+    padding:21px 21px;
     list-style-type: none;
+    @media only screen and (max-width: 768px){
+        padding:15px 15px;
+    }
+    @media only screen and (max-width: 400px){
+        padding:0px;
+    }
 }
 #image-box{
     padding:0;
@@ -101,30 +95,69 @@ export default {
 }
 .full-section{
     font-family: $primary_font;
-    padding:50px 50px;
+    padding:0px 376px;
     justify-content: center;
     flex-wrap: wrap;
     display:flex;
     width:100%;
     background-color: rgb(24, 23, 23);
     margin:0;
+    @media only screen and (max-width: 1800px){
+        padding: 0px 320px;
+    }
+    @media only screen and (max-width: 1500px){
+        padding: 0px 140px
+    }
+    @media only screen and (max-width: 1400px){
+        padding: 0px 90px;
+    }
+    @media only screen and (max-width: 1200px){
+        padding: 30px 30px;
+    }
+    @media only screen and (max-width: 768px){
+        padding:15px 15px;
+    }
 }
 .left-box{
     justify-content: center;
     text-align: center;
-    flex:25%;
+    flex:10%;
+    @media only screen and(max-width: 1100px){
+        flex:50%;
+    }
+    @media only screen and (max-width: 400px){
+        flex:100%;
+    }
 }
 .center-left-box{
-    flex:25%;
+    flex:10%;
+    @media only screen and(max-width: 1100px){
+        flex:50%;
+    }
+    @media only screen and (max-width: 400px){
+        flex:100%;
+    }
 }
 .center-right-box{
-    flex:25%;
+    flex:10%;
+    @media only screen and(max-width: 1100px){
+        flex:50%;
+    }
+    @media only screen and (max-width: 400px){
+        flex:100%;
+    }
 }
 .right-box{
-    flex:25%;
+    flex:10%;
     min-width:425px;
     max-width: 25%;
     padding:50px 50px;
+    @media only screen and(max-width: 1100px){
+        flex:50%;
+    }
+    @media only screen and (max-width: 400px){
+        flex:100%;
+    }
 }
 #logo{
     margin-bottom:5%;
@@ -144,12 +177,26 @@ export default {
     padding-left: 0;
 }
 #footer-title{
+    font-size: $larger_font_size;
     color:white;
 }
+#new-date{
+    font-size: $smaller_font_size - 2;
+}
 #footer-items{
+    font-size: $smaller_font_size;
     color:#555555;
     padding:5% 5%;
     transition: $transition_full;
+}
+#footer-items-twitter{
+    font-size: $smaller_font_size;
+    color:#555555;
+    padding:5% 5%;
+    transition: $transition_full;
+}
+#uploader{
+    color: #00BFF3;
 }
 #footer-items:hover{
     color: $cream_font_color;

@@ -4,7 +4,7 @@ globális:
         ✔ Gombokat - Igyekezz minél pontosabban reprodukálni a PSD-ből a gombot. @done(21-08-19 12:02)
         ✔ háttérszineket @done(21-08-19 12:02)
         ✔ minden hoverre, ami gomb, link vagy kep, eleg 0.2 vagy 0.3 másodperces transitiont rakni @done(21-08-19 12:02)
-        ✔ Error-okat consoleból javítsd @done(21-08-19 14:54) 2 NEVEZESI HIBA MEG VALSZEG COUNTER
+        ✔ Error-okat consoleból javítsd @done(21-08-19 14:54) 2 NEVEZESI HIBA
         ✔ címekben nem jók a távolságok a cím és az alatta lévő leírás között @done(21-08-19 14:16)
 
 Nav:
@@ -46,10 +46,10 @@ Video:
 Exccellent for:
     ✔ a kép nem lóghat így a semmibe, a countup block tetejéhez kellene "tapadjon". ezen a block-on inkább paddingot használj, meg a következő margin-ját is szedd le @done(21-08-18 14:22)
     ✔ a kis nyíl hoverre ne forduljon el, csak kattintásra @done(21-08-18 14:23)
-    ☐ tegyél egy kis animációt a blokk megjelenésre és eltűnésre
+    ✔ tegyél egy kis animációt a blokk megjelenésre és eltűnésre @done(21-08-23 10:03) out animactio kell
 
 Countup:
-    ☐ elég ha oldalbetöltés után első alkalommal felszámol a countup, mert így nem jó értékeket mutat mikor újra átgörgetünk felette
+    ✔ elég ha oldalbetöltés után első alkalommal felszámol a countup, mert így nem jó értékeket mutat mikor újra átgörgetünk felette @done(21-08-23 08:16)
 
 Recent:
     ✔ inkább maradjunk a PSD layoutnál, és lehessen több mint 3 elem a carousel-ben @done(21-08-18 13:52)
@@ -66,9 +66,9 @@ Footer:
 
 JS Funckionalítások:
     ✔ All ne egy típus legyen, hanem arra az összes típus jelenjen meg a szűrésnél @done(21-08-18 10:26)
-    ☐ Load More tűnjön el, amennyiben már nincs több be nem töltött adat
+    ✔ Load More tűnjön el, amennyiben már nincs több be nem töltött adat @done(21-08-23 10:55)
     ✔ Mobil szekciónál a lenyílló részek APIből jöjjenek @done(21-08-18 10:26)
-    ☐ Countupnál valami jquery nélküli plugin használata, illetve minden node_modules-ból jöjjön, ne külső scriptként
-    ☐ Formnál nem kell a GET, hanem a POST responseból kiírtatni az üzenetet. Itt csak akkor lehessen elküldeni a formot, ha egyik mező se üres, illetve ha az emailen stimmel a regex validáció(valós email cím check).
+    ✔ Countupnál valami jquery nélküli plugin használata, illetve minden node_modules-ból jöjjön, ne külső scriptként @done(21-08-23 08:16)
+    ✔ Formnál nem kell a GET, hanem a POST responseból kiírtatni az üzenetet. Itt csak akkor lehessen elküldeni a formot, ha egyik mező se üres, illetve ha az emailen stimmel a regex validáció(valós email cím check). @done(21-08-23 08:16)
     ✔ Minden API requestnél csinálni egy fajta error kezelést, arra az esetre, ha pl az endpoint nem található, vagy simán csak a responseba egy hiba jön vissza. @done(21-08-20 14:39)
     ✔ Ennek szerintem csak utána kell olvasni, de biztos hogy a mirage.js is tud error handling-et szimulálni @done(21-08-20 14:55)

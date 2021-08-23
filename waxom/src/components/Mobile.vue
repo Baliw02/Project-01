@@ -11,9 +11,11 @@
                     <ul id="drp-menu">
                         <li v-for="(list, list_index) in datas" :key="list + list_index + list.title +list.content ">
                             <p> <button @click="setActive(list_index)" :class="{active: list_index === active && counter === 1}"><font-awesome-icon :icon="['fas', 'angle-right']" id="icon" /></button>{{list.title}}</p>
-                            <div v-if="active === list_index && counter == 1" class="drp-content" :class="{active: list_index === active && counter === 1}">
-                                {{list.content}}
-                            </div>
+                            <transition name="dropdown">
+                                <div v-if="active === list_index && counter == 1" class="drp-content" :class="{active: list_index === active && counter === 1}">
+                                    {{list.content}}
+                                </div>
+                            </transition>
                         </li>
                     </ul>
                 </div>
@@ -33,7 +35,6 @@ export default {
         datas: [],
         isActive: false,
         selected: undefined,
-        clicked: false,
         counter: 0,
         btns: [
             {index: 0},
@@ -109,6 +110,7 @@ export default {
         }
         button.active{
             transform:rotate(90deg);
+            margin-bottom:0;
         }
         #icon{
             margin:auto;
@@ -119,7 +121,9 @@ export default {
         }
         list-style-type: none;
         .drp-content{
+            transition: $transition_full;
             padding:5px 5px;
+            text-align: left;
         }
         p{
             text-align: left;
@@ -127,10 +131,11 @@ export default {
             margin-bottom: 0;
             padding:11px 11px;
         }
-        .drp-content{
-            padding: 5px 20px;
-            text-align: left;
-            transition: all .5s linear;
+        .dropdown-enter-active{
+            animation: mobile-box-in .3s;
+        }
+        .dropdown-leave-active{
+            animation: mobile-box-in .3s reverse;
         }
     }
     @media only screen and (max-width:1440px){
@@ -170,5 +175,25 @@ export default {
             }
         }
     }
+@keyframes mobile-box-in {
+    from{
+        opacity:0;
+        transform: translateY(-50%)
+    }
+    to{
+        opacity:1;
+        transform: translateX(0)
+    }
+}
+@keyframes mobile-box-out {
+    from{
+        visibility:visible;
+        transform:translateX(0)
+    }
+    to{
+        visibility: hidden;
+        transform:translateX(100%)
+    }
+}
 }
 </style>

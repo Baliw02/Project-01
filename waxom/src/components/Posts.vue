@@ -9,7 +9,7 @@
             </p>
         </div>
         <div class="post-row">
-        <div class="posts" v-for="post in activePosts" :key="post.day + post.link + post.day + post.month + post.content ">
+        <div class="posts" :class="{threePostBox:true}" v-for="post in activePosts" :key="post.day + post.link + post.day + post.month + post.content ">
             <div class="post-date">
                 <span id="post-day">{{post.day}}</span>
                 <span id="post-month">{{post.month}}</span>
@@ -111,13 +111,17 @@ export default {
 .full-row{
     margin-top:89px;
     margin-bottom:60px;
+    text-align: center;
+    position:relative;
     .row-title{
+        text-align:center;
         font-size: $larger_font_size + 6;
         color:#555555;
         padding-bottom: 30px;
         margin-bottom:0;
     }
     .row-p{
+        text-align: center;
         color:#8C8C8C;
         font-size: $medium_font_size;
     }
@@ -135,10 +139,9 @@ export default {
         max-height: 396px;
         flex:30%;
         position:relative;
-        margin: 29px;
+        margin: 15px;
         transition: $transition_full;
         border: 1px solid #d6d4d4;
-
         .post-date{
             transition: $transition_full;
             left: 10px;
@@ -213,6 +216,7 @@ export default {
         }
     }
     .post_sliders{
+        margin: 39px;
         margin-inline: 7px;
         color:$cream_font_color;
         width:23px;

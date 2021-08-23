@@ -73,6 +73,9 @@ position:relative;
     bottom:15%;
     left:0;
     right:0;
+    @media only screen and (max-width:400px){
+        top: 40%;
+    }
 }
 #text-p-image{
     color:white;
@@ -95,6 +98,7 @@ position:relative;
     }
 }
 #text-span-image{
+    padding:5px 5px;
     text-align: center;
     color:white;
     font-family: $primary_font;
@@ -118,6 +122,10 @@ $transition_time: 1;
     cursor: pointer;
     border-radius: 5%;
     transition: $transition_full;
+    @media only screen and (max-width: 400px){
+        margin-top: 8%;
+        padding:5px 5px;
+    }
 }
 #get-started-btn:hover{
     background-color: black;
