@@ -256,7 +256,7 @@ export default {
     margin:auto;
     margin-bottom:61px;
     font-family: Raleway;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     padding: 1.0% 1.0%;
     background-color: #998675;

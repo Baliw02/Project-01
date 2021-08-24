@@ -9,7 +9,7 @@
             </p>
         </div>
         <div class="post-row">
-        <div class="posts" :class="{threePostBox:true}" v-for="post in activePosts" :key="post.day + post.link + post.day + post.month + post.content ">
+        <div class="posts" :class="{threePostBox:true}" v-for="(post) in activePosts" :key="post.day + post.link + post.day + post.month + post.content ">
             <div class="post-date">
                 <span id="post-day">{{post.day}}</span>
                 <span id="post-month">{{post.month}}</span>
@@ -36,7 +36,6 @@ export default {
     data(){
         return{
             box_datas: [],
-            activeId: 0,
             windowWidth: 0,
             min: 1,
             max: 3,
@@ -47,14 +46,6 @@ export default {
         }
     },
     methods:{
-        checking:function(){
-            if(this.activeId == 3 ){
-                this.activeId = 2
-            }
-            if(this.activeId == -1){
-                this.activeId = 0
-            }
-        },
         slideLeft:function(){
             this.max = this.max - this.sub
             this.min = this.min - this.sub
@@ -68,7 +59,7 @@ export default {
             if(0 >= this.min){
                 this.min = 1
                 this.max = 3
-            }        
+            }
 },
         slideright:function(){
             this.max = this.max + this.sum 
@@ -98,9 +89,9 @@ export default {
     computed:{
         activePosts: function(){
             return this.box_datas.filter((posts) => {
-                    if(posts.index >= this.min && posts.index <= this.max){
-                        return posts
-            }
+                if(posts.index >= this.min && posts.index <= this.max){
+                    return posts
+                }
         }
     )}
 },
@@ -158,6 +149,7 @@ export default {
             position:absolute;
             color:white;
             background-color: #363636;
+            z-index: 50;
             span{
                 padding:3px 3px;
                 margin:0;
@@ -205,6 +197,9 @@ export default {
                 #post-month{
                     background-color: $light_cream_bg_color;
                 }
+            }
+            #post-image{
+                filter: brightness(0.5);
             }
         }
         #post-button{

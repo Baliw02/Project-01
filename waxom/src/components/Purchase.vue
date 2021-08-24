@@ -23,9 +23,6 @@ export default {
 <style lang="scss" scoped>
 @import './design.scss';
 
-.text-purchase{
-    padding: 20px 20px;
-}
 #button-purchase-box{
     padding: 20px 20px;
 }
@@ -38,55 +35,61 @@ export default {
     @media only screen and(max-width:711px){
         justify-content: center;
     }
-}
-.left{
-    padding-left:20%;
-    flex:50%;
-    text-align: left;
-    @media only screen and(max-width:711px){
-        justify-content: center;
-        padding:5px 5px;
+    .left{
+        padding-left:20%;
+        flex:50%;
         text-align: left;
-        flex:100%;
+        @media only screen and(max-width:711px){
+            justify-content: center;
+            padding:5px 5px;
+            text-align: left;
+            flex:100%;
+        }
+        .text-purchase{
+            padding: 20px 20px;
+            #purchase-title{
+                color:white;
+                font-size: 28px;
+            }
+
+            #purchase-content{
+                font-size: $medium_font_size;
+                text-align: left;
+                color:$cream_font_color;
+                margin-bottom:0;
+            }
+            #purchase-title, #purchase-content, #sec-color{
+                font-family: $primary_font;
+                padding-top:1%;
+                opacity:0.8;
+            }
+
+        }
+    }
+    .right{
+        text-align: center;
+        flex:50%;
+        #purchase-button{
+            padding:2% 2%;
+            font-family: $primary_font;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: $dark_cream_bg_color;
+            color:white;
+            border:none;
+            cursor: pointer;
+            border-radius: 5%;
+            transition: $transition_full;
+
+            &:hover{
+                background-color: black;
+            }
+        }
     }
 }
-.right{
-    text-align: center;
-    flex:50%;
-}
-#purchase-button{
-    padding:2% 2%;
-    font-family: $primary_font;
-    font-weight: 700;
-    text-transform: uppercase;
-    background-color: $dark_cream_bg_color;
-    color:white;
-    border:none;
-    cursor: pointer;
-    border-radius: 5%;
-    transition: $transition_full;
-}
-#purchase-button:hover{
-    background-color: black;
-}
-#purchase-title{
-    color:white;
-    font-size: 28px;
-}
-#sec-color{
-    color:$cream_font_color;
-}
-#purchase-content{
-    font-size: $medium_font_size;
-    text-align: left;
-    color:$cream_font_color;
-    margin-bottom:0;
-}
-#purchase-title, #purchase-content, #sec-color{
-    font-family: $primary_font;
-    padding-top:1%;
-    opacity:0.8;
-}
+// #sec-color{
+//     color:$cream_font_color;
+// }
 
 
 </style>

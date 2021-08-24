@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import {Server, Model} from 'miragejs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose, faPen, faLink, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose, faPen, faLink, faSearch, faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
@@ -17,7 +17,7 @@ Vue.use( VueSplide );
 window.Vue = Vue;
 
 
-library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose, faPen, faLink, faSearch)
+library.add(faUserSecret, faCaretRight, faCaretLeft, faCaretUp, faAngleRight, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose, faPen, faLink, faSearch, faShoppingBag)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

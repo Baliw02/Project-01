@@ -114,13 +114,16 @@ $transition_time:1s;
     border-color:$dark_cream_font_color;
 }
 #video-text-title{
+    font-weight: medium;
     font-size: $larger_font_size + 6;
+    font-family: $primary_font;
 }
 #video-text-p{
+    font-weight: medium;
     font-size: $medium_font_size;
+    font-family: $primary_font;
 }
 #video-text-title, #video-text-p{
     transition: $transition_full;
-    font-family: Raleway;
 }
 </style>

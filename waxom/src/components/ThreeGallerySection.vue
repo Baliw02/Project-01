@@ -101,13 +101,13 @@ export default {
     @media only screen and (min-width: 2000px){
             height: 550px;
     }
-.galleries{
-    height: 300px;
-    @media only screen and(max-width: 1630px){
-        height:fit-content;
-    }
+    .galleries{
+        height: 300px;
+        @media only screen and(max-width: 1630px){
+            height:fit-content;
+        }
 
-}
+    }
 $transition_time: 1;
 .carousel{
     margin-inline: 50px;

@@ -162,7 +162,7 @@ export default {
 }
 .full-form-box > .form-box > h1{
     position:absolute;
-    font-size: $larger_font_size + 3;
+    font-size: $larger_font_size;
     padding: 10px 10px;
     width:100%;
     left:0;
@@ -224,7 +224,7 @@ textarea{
     transition: $transition_full;
 }
 textarea[type="text"]{
-    font-size: $medium_font_size ;
+    font-size: $smaller_font_size ;
 }
 textarea:focus{
     background-color: rgba(224, 205, 184, 0.3);
@@ -233,14 +233,14 @@ textarea:focus{
     border:none;
     font-family: $primary_font;
     color: $cream_font_color;
-    font-size: $medium_font_size + 2;
+    font-size: $smaller_font_size + 2;
     opacity: 1;
     text-align: center;
 }
 :-ms-input-placeholder{
     font-family: $primary_font;
     color:white;
-    font-size: $medium_font_size;
+    font-size: $smaller_font_size;
 }
 .push-notification{
     display:block;
