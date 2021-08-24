@@ -5,7 +5,8 @@
         <button class="buttons" v-if="switcher" id="stopbutton" v-on:click="stopVid()"><font-awesome-icon id="stop" :icon="['fas', 'grip-lines-vertical']" /></button>
         <div id="text-on-video" class="text-on-video">
             <h1 id="video-text-title">Waxom Video Presentation</h1>
-            <p id="video-text-p">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem consuetudium.</p>    
+            <p id="video-text-p">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem consuetudium.</p>
+            <span v-if="!switcher">{{min_sec}}</span>    
         </div>
     </div>
 </template>
@@ -15,7 +16,8 @@ export default {
     data(){
         return{
             switcher: false,
-            min: 0
+            min: 0,
+            min_sec: 0
        }   
     },
     methods:{
@@ -28,6 +30,9 @@ export default {
                 vid.play();
                 this.switcher = true;
                 text.style.visibility = "collapse"
+                this.min = parseInt(vid.duration - vid.currentTime)
+                this.min_sec = Math.floor(this.min / 60) + ":" + (this.min % 60 ? this.min % 60 : '00')
+                this.min_sec.toFixed(3)
                 return this.switcher   
             }
         },
@@ -40,6 +45,9 @@ export default {
                 vid.pause();
                 text.style.visibility = "visible"                
                 this.switcher = false;
+                this.min = parseInt(vid.duration - vid.currentTime)
+                this.min_sec = Math.floor(this.min / 60) + ":" + (this.min % 60 ? this.min % 60 : '00')
+                this.min_sec.toFixed(3)
                 return this.switcher
             }
         },
