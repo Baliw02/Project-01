@@ -108,20 +108,46 @@ export default {
     margin:auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .left-box{
     justify-content: center;
     text-align: center;
     width:25%;
+    @media only screen and (max-width:1150px){
+        width:45%;
+    }
+    @media only screen and (max-width:700px){
+        width:95%;
+    }
 }
 .center-left-box{
     width:25%;
+    @media only screen and (max-width:1150px){
+        width:45%;
+    }
+    @media only screen and (max-width:700px){
+        width:95%;
+    }
 }
 .center-right-box{
     width:25%;
+    @media only screen and (max-width:1150px){
+        width:45%;
+    }
+    @media only screen and (max-width:700px){
+        width:95%;
+    }
 }
 .right-box{
     width:25%;
+    @media only screen and (max-width:1150px){
+        width:45%;
+        padding: 16px 16px;
+    }
+    @media only screen and (max-width:700px){
+        width:95%;
+    }
 }
 #logo{
     margin-bottom:5%;
