@@ -1,4 +1,5 @@
 <template>
+<div class="wrapper">
     <div class="full-row">
         <div class="text-post">
             <h1 id="row-title">
@@ -25,6 +26,7 @@
             <button class="post_sliders" :class="{disabled: data_len === max}" @click="slideright()"><font-awesome-icon id="slider-icon" icon="angle-right" /></button>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -125,9 +127,7 @@ export default {
     .posts{
         text-align: left;
         justify-content: center;
-        width: fit-content;
-        max-width: 371px;
-        max-height: 396px;
+        width: 30%;
         flex:30%;
         position:relative;
         margin: 15px;
@@ -166,8 +166,6 @@ export default {
         }
         #post-image{
             max-width: 100%;
-            width: 371px;
-            height: 221px;
             cursor:pointer;
         }        
         h2{
@@ -209,6 +207,18 @@ export default {
             background-color: transparent;
             color: $cream_font_color;
         }
+        @media only screen and(max-width:1200px){
+            max-width: 40%;
+            flex:40%;
+        }
+        @media only screen and(max-width:740px){
+            max-width: 60%;
+            flex:60%;
+        }
+        @media only screen and(max-width:450px){
+            max-width: 95%;
+            flex:95%;
+        }
     }
     .post_sliders{
         margin: 39px;
@@ -225,20 +235,6 @@ export default {
         border: 2px solid grey;
         color: grey;
         cursor: auto;
-    }
-    @media only screen and(max-width:1300px){
-        .posts{
-            flex:100%;
-        }
-    }
-    @media only screen and(max-width: 415px){
-        #post-image{
-            max-width: 20px;
-        }
-        .posts{
-            width: 320px;
-            height: 340px;
-        }
     }
 }
 </style>

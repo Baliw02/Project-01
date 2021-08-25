@@ -1,4 +1,5 @@
 <template>
+<div class="wrapper">
     <div class="full-section-projects">
         <div class="text-project">
             <h1 id="projects-title"> Our Latest Projects.</h1>
@@ -25,6 +26,7 @@
         </div>
             <button v-if="show" id="load-more" v-on:click="limit += 6">Load more</button>
     </div>
+</div>
 </template>
 
 <script>
@@ -138,51 +140,39 @@ export default {
     transition: all .1s linear;
 }
 #projects-image{
-    min-height: 295px;
-    max-height: 295px;
+    object-position: center;
+    object-fit: cover;
     width:100%;
     height: 100%;
+    height: 296px;
+    max-height:296px;
     max-width: 100%;
-    position:relative;
-    @media only screen and (max-width: 450px){
-        min-height:auto;
-    }
 }
 
 .rows{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-    @media only screen and (max-width: 1090px){
-        padding: 0 0;
-    }
-    @media only screen and(min-width: 1925px){
-        padding: 0 160px; 
-    }
-    @media only screen and (min-width: 2000px){
-        padding: 0 340px;
-    }
-    @media only screen and (min-width: 2600px){
-        padding: 0 460px;
-    }
-    @media only screen and (min-width: 2800px){
-        padding: 0 00px;
-    }
+    padding:10px;
 }
 .boxes{
-    margin:13px;
-    flex:0 0 33.3333%;
     transition:all .1s linear;
 }
 .boxes.activatedc{
+    height: 30%;
+    width:30%;
     position:relative;
-    max-width: 396px;
-    max-height: 397px;
-    min-width: 396px;
-    min-height: 397px;
-    @media only screen and (max-width: 450px){
-        margin-bottom: 50px;
-        width:100%;
+    margin:10px;
+    max-height: 30%;
+    @media only screen and (max-width:1200px){
+        width:40%;
+        margin:15px;
+    }
+    @media only screen and (max-width: 740px){
+        width: 100%;
+    }
+    @media only screen and (max-width: 400px){
+        margin: 5px;
     }
 }
 .boxes:hover .content{
@@ -193,11 +183,11 @@ export default {
     width:0;
     height: 0;
     position:absolute;
-    top:71.8%;
+    top:286px;
     left:2%;
     content:'';
-    border-left: 31px solid transparent;
-    border-right: 31px solid transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
     border-bottom: 11px solid #FBFAF8;
     margin:auto;
 }
@@ -236,13 +226,6 @@ export default {
 .full-section-projects{
     margin-top:81px;
     text-align: center;
-    padding:0px 120px;
-    @media only screen and (max-width: 1570px){
-        padding: 0 90px;
-    }
-    @media only screen and (max-width: 1154px){
-        padding: 0 0;
-    }
 
 }
 .projects-buttons{
@@ -259,18 +242,32 @@ export default {
     font-weight: 600;
     text-transform: uppercase;
     padding: 1.0% 1.0%;
-    background-color: #998675;
+    background-color: $light_cream_bg_color;
     color:white;
     border:none;
     cursor: pointer;
-    border-radius: 5%;
+    border-radius: 2%;
     transition: all .2s linear;
     margin-top:39px;
-    box-shadow: 0px 6px 5px -3px #9E8E7C;
+    position:relative;
+        &::before{
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        height: 3px;
+        z-index: 0;
+        display:block;
+        content:'';
+        width: 100%;
+        position: absolute;
+        background-color: #7c695c;
+        top:97%;
+        left:0;
+        bottom:0;
+        }
 }
 #load-more:hover{
-    background-color:black;
-    color:#998675
+    background-color: #7c695c;
+    color:white;
 }
 
 #projects-buttons-menu{
@@ -293,6 +290,16 @@ export default {
     font-family: $primary_font;
     border:none;
     padding: 24px 24px;
+    width:60%;
+    margin:auto;
+    @media only screen and (max-width: 740px){
+        width: 90%;
+        padding:12px 12px;
+    }
+    @media only screen and (max-width: 400px){
+        width: 100%;
+    }
+
 }
 .triangle{
     width: 5px;

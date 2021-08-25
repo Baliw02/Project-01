@@ -78,11 +78,25 @@ export default {
             color:white;
             border:none;
             cursor: pointer;
-            border-radius: 5%;
+            border-radius: 2%;
             transition: $transition_full;
-
+            position:relative;
             &:hover{
-                background-color: black;
+                background-color: #7c695c;
+            }
+            &::before{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                height: 3px;
+                z-index: 0;
+                display:block;
+                content:'';
+                width: 100%;
+                position: absolute;
+                background-color: #7c695c;
+                top:98%;
+                left:0;
+                bottom:0;
             }
         }
     }

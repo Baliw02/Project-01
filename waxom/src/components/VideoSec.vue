@@ -6,7 +6,7 @@
         <div id="text-on-video" class="text-on-video">
             <h1 id="video-text-title">Waxom Video Presentation</h1>
             <p id="video-text-p">Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem consuetudium.</p>
-            <span v-if="!switcher">{{min_sec}}</span>    
+            <span v-if="!switcher && min > 0">{{min_sec}}</span>    
         </div>
     </div>
 </template>
@@ -61,7 +61,7 @@ export default {
 .text-on-video{
     display:block;
     position: absolute;
-    width:fit-content;
+    width:60%;
     margin: $centered_margin;
     opacity: 1;
     top:60%;
@@ -71,6 +71,9 @@ export default {
     z-index: 50;
     color:white;
     text-align: center;
+    @media only screen and(max-width:650px){
+        width:95%;
+    }
 }
 #video{
     width:100%;

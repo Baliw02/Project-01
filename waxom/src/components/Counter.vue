@@ -1,5 +1,7 @@
 <template>
+
 <div class="full-counter" v-waypoint = "{active: true, callback: onWaypoint}">
+    <div class="wrapper">
     <div class="counters"  >
         <div class="counter-boxes">
             <img id="counter-logos" src="./icons_etc/clients.png">
@@ -37,20 +39,13 @@
         </div>
 
     </div>
-
+    </div>
 </div>    
 </template>
 
 <script>
-import Vue from "vue";
-import VueWaypoint from "vue-waypoint";
-Vue.use(VueWaypoint);
-import ICountUp from 'vue-countup-v2';
 
 export default {
-    components:{
-        ICountUp
-    },
     data(){
         return{
             counter:false,
@@ -90,25 +85,9 @@ export default {
     width:100%;
 }
 .counters{
-    padding:69px 500px;
     display:flex;
-    @media only screen and(max-width: 1800px){
-        padding: 40px 350px;
-    }
-    @media only screen and(max-width: 1500px){
-        padding: 30px 250px;
-    }
-    @media only screen and(max-width: 1200px){
-        padding: 20px 150px;
-        width:100%;
-        justify-content: center;
-    }
-
-    @media only screen and(max-width: 1000px){
-        flex-wrap:wrap;
-        width:100%;
-        justify-content: center;
-    }
+    padding:20px 0px;
+    flex-wrap: wrap;
 }
 .counter{
     color:white;
@@ -120,9 +99,12 @@ export default {
 .counter-boxes{
     justify-content: center;
     text-align: center;
-    flex:15%;
+    flex:20%;
     @media only screen and(max-width: 1000px){
         flex:50%;
+    }
+    @media only screen and(max-width: 400px){
+        flex:80%;
     }
 }
 

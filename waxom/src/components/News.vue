@@ -1,5 +1,6 @@
 <template>
     <div class="full-section">
+        <div class="wrapper">
         <div class="left-box">
             <ul id="footer-menu">
                 <li>
@@ -7,7 +8,7 @@
                 </li>
                 <li class="text">
                     <p id="list-p">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci suscipit lobortis claritatem.
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt sut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci suscipit lobortis claritatem.
                         <br><button id="footer-rm">Read More <font-awesome-icon id="icon" icon="caret-right" /></button>
                     </p>
                 </li>
@@ -41,9 +42,9 @@
                 <li id="images"><img src="./projectimages/widget01.jpg" style="max-width:100%; width:137px; height:99px"> <img src="./projectimages/widget02.jpg" style="max-width:100%; width:137px; height:99px"></li>
                 <li id="images"><img src="./projectimages/widget03.jpg" style="max-width:100%; width:137px; height:99px"> <img src="./projectimages/widget04.jpg" style="max-width:100%; width:137px; height:99px"></li>
             </ul>
-
         </div>
-    </div>
+        </div>
+        </div>
 </template>
 
 <script>
@@ -95,69 +96,32 @@ export default {
 }
 .full-section{
     font-family: $primary_font;
-    padding:0px 376px;
     justify-content: center;
     flex-wrap: wrap;
     display:flex;
     width:100%;
     background-color: rgb(24, 23, 23);
     margin:0;
-    @media only screen and (max-width: 1800px){
-        padding: 0px 320px;
-    }
-    @media only screen and (max-width: 1500px){
-        padding: 0px 140px
-    }
-    @media only screen and (max-width: 1400px){
-        padding: 0px 90px;
-    }
-    @media only screen and (max-width: 1200px){
-        padding: 30px 30px;
-    }
-    @media only screen and (max-width: 768px){
-        padding:15px 15px;
-    }
+}
+.wrapper{
+    max-width: 1200px;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 .left-box{
     justify-content: center;
     text-align: center;
-    flex:10%;
-    @media only screen and(max-width: 1100px){
-        flex:50%;
-    }
-    @media only screen and (max-width: 400px){
-        flex:100%;
-    }
+    width:25%;
 }
 .center-left-box{
-    flex:10%;
-    @media only screen and(max-width: 1100px){
-        flex:50%;
-    }
-    @media only screen and (max-width: 400px){
-        flex:100%;
-    }
+    width:25%;
 }
 .center-right-box{
-    flex:10%;
-    @media only screen and(max-width: 1100px){
-        flex:50%;
-    }
-    @media only screen and (max-width: 400px){
-        flex:100%;
-    }
+    width:25%;
 }
 .right-box{
-    flex:10%;
-    min-width:425px;
-    max-width: 25%;
-    padding:50px 50px;
-    @media only screen and(max-width: 1100px){
-        flex:50%;
-    }
-    @media only screen and (max-width: 400px){
-        flex:100%;
-    }
+    width:25%;
 }
 #logo{
     margin-bottom:5%;

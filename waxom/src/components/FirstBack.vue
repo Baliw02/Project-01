@@ -72,7 +72,9 @@ export default {
         bottom:15%;
         left:0;
         right:0;
+        width:60%;
         @media only screen and (max-width:400px){
+            width:100%;
             top: 40%;
         }
         #text-p-image{
@@ -106,6 +108,8 @@ export default {
             }
         }
         #get-started-btn{
+            border-radius: 2%;
+            position:relative;
             font-family: $primary_font;
             font-weight: 700;
             text-transform: uppercase;
@@ -117,14 +121,28 @@ export default {
             color:white;
             border:none;
             cursor: pointer;
-            border-radius: 5%;
+            z-index: 2;
             transition: $transition_full;
             @media only screen and (max-width: 400px){
                 margin-top: 8%;
                 padding:5px 5px;
             }
             &:hover{
-                background-color:black;
+                background-color: #7c695c;
+            }
+            &::before{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                height: 3px;
+                z-index: 0;
+                display:block;
+                content:'';
+                width: 100%;
+                position: absolute;
+                background-color: #7c695c;
+                top:98%;
+                left:0;
+                bottom:0;
             }
         }
     }

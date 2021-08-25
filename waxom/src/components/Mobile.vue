@@ -1,4 +1,5 @@
 <template>
+<div class="wrapper">
     <div class="mobile-section">
         <div class="left-flex">
             <img id="phone" src="./icons_etc/phone.png">
@@ -10,9 +11,9 @@
                 <div class="list">
                     <ul id="drp-menu">
                         <li v-for="(list, list_index) in datas" :key="list + list_index + list.title +list.content ">
-                            <p> <button @click="setActive(list_index)" :class="{active: list_index === active && counter === 1}"><font-awesome-icon :icon="['fas', 'angle-right']" id="icon" /></button>{{list.title}}</p>
+                            <p> <button @click="setActive(list_index)" :class="{active: list_index === active && counter == 1}"><font-awesome-icon :icon="['fas', 'angle-right']" id="icon" /></button>{{list.title}}</p>
                             <transition name="dropdown">
-                                <div v-if="active === list_index && counter == 1" class="drp-content" :class="{active: list_index === active && counter === 1}">
+                                <div v-if="active === list_index && counter == 1" class="drp-content" :class="{active: list_index === active}">
                                     {{list.content}}
                                 </div>
                             </transition>
@@ -22,6 +23,7 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 
 
@@ -33,23 +35,27 @@ export default {
         return{
         active: 0,
         datas: [],
-        isActive: false,
+        isActive: 0,
         selected: undefined,
-        counter: 0,
+        counter: null,
         btns: [
             {index: 0},
             {index: 1},
             {index: 2},
-            {index: 3,}
+            {index: 3}
         ]
         }
     },
     methods:{
         setActive:function(i){
+            this.isActive = this.active
+            this.counter += 1
             this.active = i
-            this.counter+=1
-            if(this.counter >= 2){
+            if(this.counter == 2){
                 this.counter = 0
+            }
+            if(this.active != this.isActive){
+                this.counter == 1
             }
         },
         
@@ -67,6 +73,9 @@ export default {
 <style lang="scss" scoped>
 @import './design.scss';
 
+#phone{
+    max-height:100%;
+}
 .mobile-section{
     font-family: $primary_font;
     margin-top:80px;
@@ -89,6 +98,10 @@ export default {
         flex:40%;
         text-align: right;
         justify-content: flex-end;
+        display:flex;
+        @media only screen and (max-width: 1100px){
+            justify-content: center;
+        }
     }
     .right-flex{
         color: #8C8C8C;

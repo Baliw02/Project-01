@@ -7,11 +7,14 @@ import {Server, Model} from 'miragejs'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret, faCaretRight, faAngleRight, faCaretLeft,faCaretUp, faAngleLeft, faBars, faGripLinesVertical, faInbox, faWindowClose, faPen, faLink, faSearch, faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueWaypoint from "vue-waypoint";
+import ICountUp from 'vue-countup-v2';
 
 
 import VueSplide from '@splidejs/vue-splide';
 
 Vue.use( VueSplide );
+Vue.use(VueWaypoint);
 
 
 window.Vue = Vue;
@@ -416,7 +419,7 @@ new Server({
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-
+Vue.component('ICountUp', ICountUp)
 Vue.config.productionTip = false
 
 

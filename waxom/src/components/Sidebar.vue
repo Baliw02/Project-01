@@ -3,10 +3,10 @@
     <div :class="{navb: true, changed: scrollPosition >= 30, bg: activator}">
         <button id="show-sidebar" v-on:click="activate()"><font-awesome-icon v-if="!activator" id='icon' :icon="['fas', 'bars']" /><font-awesome-icon v-if="activator" id='icon' :icon="['fas', 'window-close']" /></button>
         <img id="sidebar-logo" src="./icons_etc/logo.png">
-    </div>
-    <div :class="{sidebar:true, active: activator}">
         <img id="search-logo" src="./icons_etc/search.png" alt="">
         <img id="car-logo" src="./icons_etc/cart.png" alt="">
+    </div>
+    <div :class="{sidebar:true, active: activator}">
         <ul id="sidebar-ul">
             <li id="sidebar-item" class="act">Home</li>
             <li id="sidebar-item" >About Me</li>
@@ -53,10 +53,37 @@ export default {
 <style lang="scss" scoped>
 @import './design.scss';
 
-#search-logo, #cart-logo{
-    text-align: right;
-    margin-right:2%;
-    margin-left:2%;
+#car-logo{
+    width:19px;
+    height: 25px;
+}
+#search-logo{
+    width:25px;
+    height: 25px;
+}
+#search-logo{
+    right:5%;
+    top:1.2%;
+    margin:auto;
+    position:fixed;
+    z-index: 151;
+    display:block;
+    @media only screen and(max-width:450px){
+        margin-left:2px;
+        margin-right: 15px;
+    }
+}
+#car-logo{
+    right:1%;
+    top:1.2%;
+    margin: auto;
+    position:fixed;
+    z-index: 151;
+    display:block;
+    @media only screen and(max-width:450px){
+        margin-left:15px;
+        margin-right: 2px;
+    }
 }
 #sidebar-logo{
     margin:auto;
@@ -96,11 +123,15 @@ export default {
     left:0;
     top:54px;
     transform:translateX(0%);
+    padding-left:0 !important;
     padding:30px 30px;
     width:30%;
     height: 100vh;
     @media only screen and(max-width: 600px){
         width:50%;
+        }
+    @media only screen and(max-width: 400px){
+        width:80%;
         }
 }
 #show-sidebar{

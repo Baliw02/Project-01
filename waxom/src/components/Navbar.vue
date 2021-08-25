@@ -1,7 +1,7 @@
 <template>
 <div class="header" :class="{changed : scrollPosition >= 5}">
         <ul id="menu-ul">
-            <li id="menu-items"><img id="menu-logo" src="./icons_etc/logo.png" alt="" style="width: 162px; height: 50px;"></li>
+            <li id="menu-items"><img id="menu-logo" src="./icons_etc/logo.png" alt="" ></li>
             <li id="menu-items">Home</li>
             <li id="menu-items">About Me</li>
             <li id="menu-items">Portfolio</li>
@@ -50,8 +50,8 @@ export default {
     height: auto;
     max-width: 100%;
     min-width: 50%;
-    min-height: 100px;
-    display: block;
+    display: flex;
+    align-items: center;
     justify-content: center;
     background-color: transparent;
     margin-top: 0;
@@ -59,21 +59,18 @@ export default {
     z-index: 99;
     position:relative;
     transition: $transition_full;
-    
+    min-height: 80px;
 
     #menu-ul{
-        padding:20px 20px;
+        padding:15px 15px;
         padding-bottom:0;
         text-align: center;
         width: 100%;
 
         #menu-logo{
-            width:182px;
-            height: 57px;
+            width:8%;
         }
-
         #menu-items{
-            height: 57px;
             cursor:pointer;
             font-size: $smaller_font_size;
             font-family: $primary_font;
@@ -87,7 +84,7 @@ export default {
             color:$dark_cream_font_color
         }
         .icons{
-            font-size: $smaller_font_size + 4;
+            font-size: $smaller_font_size + 2;
             transition: $transition_full;
             margin-inline: -0.6%;
             &:hover{

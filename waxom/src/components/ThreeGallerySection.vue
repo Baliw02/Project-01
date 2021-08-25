@@ -84,6 +84,8 @@ export default {
         margin-bottom:0;
     }
     #gallery-p{
+        width:60%;
+        margin:auto;
         margin-bottom:0;
         font-size: $smaller_font_size + 2;
         font-family: $primary_font;

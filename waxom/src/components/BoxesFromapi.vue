@@ -1,4 +1,5 @@
 <template>
+<div class="wrapper">
     <div class="full-section-api">
         <div class="small-api-boxes" v-for="box in boxes" :key="box + box.image + box.title + box.content" >
             <img id="box-logo" :src="box.image">       
@@ -7,6 +8,7 @@
             <p id="bottom"></p>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -42,11 +44,14 @@ export default {
 }
 #content{
     font-size:$smaller_font_size ;
-    padding:10px 10px;
+    padding:0px 15px;
 }
+.wrapper{
+    max-width:1200px;
+    margin-left:auto;
+    margin-right: auto;
+
 .full-section-api{
-    padding-left: 13%;
-    padding-right: 13%;
     margin-top:-81px;
     margin-bottom:81px;
     display:flex;
@@ -55,7 +60,7 @@ export default {
     justify-content: center;
 
     .small-api-boxes{
-        padding: 17px 17px;
+        padding: 10px 10px;
         flex:10%;
         width:10%;
         text-align: center;        
@@ -87,6 +92,7 @@ export default {
         max-width:45px;
         height: 41px;
         max-height:41px;
+        margin-bottom:8px;
         }
         #box-title, #bottom{
         transition: all .2s linear;
@@ -99,6 +105,5 @@ export default {
         }
     }
 }
-
-
+}
 </style>
